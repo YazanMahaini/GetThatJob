@@ -2,7 +2,7 @@
 
 ## Workspace lifecycle
 
-Setup runs once for this workspace and writes `.getthatjob/setup.json`. Run SetupChecker after the user adds or changes source documents, and use ProfileIntake to index verified information. Missing inputs are questions to resolve, not permission to invent facts.
+Setup runs once for this workspace and writes `.getthatjob/setup.json`. Run SetupChecker after the user adds or changes source documents, and use ProfileIntake to index verified information. Read `APPLICATION_PROFILE.md` before asking for recurring form answers. Missing inputs are questions to resolve, not permission to invent facts.
 
 ## Opportunity pipeline
 
@@ -11,7 +11,7 @@ For LinkedIn Jobs, use a job-search connector tool when one is available or a si
 1. Search the user's targets and open the live employer posting. Log source, requisition, date checked, deadline, location, pay, eligibility, and route.
 2. Check `APPLICATIONS.csv`, `SEARCH_LOG.md`, and any accessible application history for duplicates. Compare essential requirements against approved CVs and credential evidence. Mark each as met, unclear, or unmet.
 3. For a strong, eligible role, create `applications/<ID>/README.md`, a tailored CV and a cover letter, plus any requested extras. Use the user's source-document style and requested output format. Preserve originals. Pair every new Word document with a same-stem PDF in the packet, and use the PDF for review and upload unless the employer requires another format. Check text, layout, metadata, and comments.
-4. Fill an accessible portal draft using verified answers when the user's request authorizes preparation. Check what persisted. Leave unknown required answers for the user. Stop before final Apply/Submit, certification, or signing unless the user has separately authorized the specific action. Never sign without explicit instruction for that application.
+4. Fill an accessible portal draft using verified answers when the user's request authorizes preparation. Check what persisted. Leave unknown required answers for the user. After each checked draft or material draft update, use ProfileBuilder to add newly verified, reusable answers to `APPLICATION_PROFILE.md`, preserving source and scope. Stop before final Apply/Submit, certification, or signing unless the user has separately authorized the specific action. Never sign without explicit instruction for that application.
 5. After authorized submission or user-reported submission, verify a matching receipt or portal confirmation. Record exact status and evidence; follow later changes in the same packet. Do not treat a portal's last-updated timestamp as proof of a new submission without independent evidence.
 6. On request, check later portal or recruiter updates, interviews, deadlines, and outcomes. Preserve original submission evidence and record each change with its source and observation time. Do not respond, withdraw, or accept an offer without the user's applicable instruction.
 

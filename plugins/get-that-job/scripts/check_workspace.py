@@ -12,7 +12,7 @@ from pathlib import Path
 
 REQUIRED_DIRS = ("applications", "CoverLetters", "CoverLetters/Template", "CVs", "Qualifications&Certificates")
 REQUIRED_FILES = (
-    "AGENTS.md", "MEMORY.md", "CV_INDEX.md", "QUALIFICATIONS_INDEX.md",
+    "AGENTS.md", "MEMORY.md", "APPLICATION_PROFILE.md", "CV_INDEX.md", "QUALIFICATIONS_INDEX.md",
     "TARGET_ROLES.md", "OPERATIONS.md", "SEARCH_LOG.md", "APPLICATIONS.csv",
     "applications/README.md", "CoverLetters/README.md", "CoverLetters/Template/README.md", "CVs/README.md",
     "Qualifications&Certificates/README.md", ".getthatjob/setup.json",

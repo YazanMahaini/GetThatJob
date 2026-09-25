@@ -15,7 +15,8 @@ flowchart TD
     E -- Yes --> H["JobFinder searches and checks eligibility"]
     H --> I["Creates a tailored application packet"]
     I --> J["Fills and checks a portal draft when accessible"]
-    J --> K["You review"]
+    J --> P["ProfileBuilder saves new verified reusable answers"]
+    P --> K["You review"]
     K -- Revisions --> I
     K -- You submit --> M["EmailConfirmationChecker looks for a matching receipt"]
     K -- You ask it to submit --> L["ApplicationFinalize checks and submits the specific application"]
@@ -23,6 +24,7 @@ flowchart TD
     M --> N["Application tracker and packet record the outcome"]
     N --> O["ApplicationFollowUp checks later status when requested"]
     O --> N
+    N -.->|Next role reuses confirmed answers| H
 ```
 
-The workspace contains `CVs/`, `CoverLetters/`, `Qualifications&Certificates/`, `applications/`, and the Markdown and CSV source indexes. Setup runs once per applicant workspace. A search request may authorize filling a reversible draft; final submission and application signing have separate authorization boundaries. Later follow-up is recorded in the same application packet.
+The workspace contains `CVs/`, `CoverLetters/`, `Qualifications&Certificates/`, `applications/`, `APPLICATION_PROFILE.md`, and the other Markdown and CSV source indexes. Setup runs once per applicant workspace. A search request may authorize filling a reversible draft; final submission and application signing have separate authorization boundaries. Later follow-up is recorded in the same application packet.

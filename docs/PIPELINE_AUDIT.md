@@ -11,6 +11,7 @@ This checklist maps the reusable plugin to the reference job-search workflow. Ap
 | Duplicate control | Check the 24-column application tracker, search log, and accessible portal history by employer and requisition before tailoring. Do not infer submission from a portal's updated timestamp. |
 | Application materials | Prepare both tailored CV and cover letter for each strong eligible role, plus required extras. Keep originals unchanged. Pair new Word files with same-stem PDFs; inspect layout, text, properties, and comments. Use applicant-provided styling only. |
 | Portal draft | Fill all supported fields from verified sources, save, reopen or inspect persistence, and record questions and blockers. A search request authorizes reversible draft preparation. |
+| Reusable profile | After each checked draft, promote newly verified non-CV form answers to the private `APPLICATION_PROFILE.md` with source, confirmation date, and reuse scope. Read it before the next form and recheck context-specific answers. |
 | Review and submission | Hand off a checked draft for review. Final submission requires the user's applicable instruction. An e-signature or equivalent signing field requires separate authorization for that specific application. |
 | Confirmation | Search the configured mailbox narrowly and read-only for a matching receipt; capture sender, subject, timestamp, link, and evidence. Update the packet and tracker only when the evidence supports the stage. |
 | Later status | On request, check recruiter and portal updates, record interviews or deadlines, and preserve original submission evidence. |
@@ -18,7 +19,7 @@ This checklist maps the reusable plugin to the reference job-search workflow. Ap
 ## Release checks
 
 - Validate the Codex plugin manifest and all skill entry points.
-- Test first setup, repeat setup without overwrite, empty input, valid source files, invalid document detection, and compatibility with the reference tracker schema in a synthetic workspace.
+- Test first setup, repeat setup without overwrite, safe repair of newly added templates, empty input, valid source files, invalid document detection, and compatibility with the reference tracker schema in a synthetic workspace.
 - Verify marketplace discovery and installation from the repository layout.
 - Review tracked files for applicant identifiers, contact details, application files, and accidental runtime caches before publication.
 

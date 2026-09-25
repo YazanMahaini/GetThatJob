@@ -7,7 +7,7 @@ description: Index a job seeker's CVs and credentials, capture confirmed search 
 
 If `.getthatjob/setup.json` is absent in the selected workspace, use [SetupSkill](../setup-skill/SKILL.md) first.
 
-Use after setup or whenever the user supplies or updates a CV, credential, letter example, or durable profile fact. Read the supplied source itself. Update `CV_INDEX.md`, `QUALIFICATIONS_INDEX.md`, `MEMORY.md`, and `TARGET_ROLES.md` with only facts the sources support, citing the file or user statement and date where useful. Do not treat a CV as official proof of an award or license when a credential document conflicts. Mark conflicts and missing status clearly.
+Use after setup or whenever the user supplies or updates a CV, credential, letter example, or durable profile fact. Read the supplied source itself and check `APPLICATION_PROFILE.md` for already confirmed form answers. Update `CV_INDEX.md`, `QUALIFICATIONS_INDEX.md`, `MEMORY.md`, `APPLICATION_PROFILE.md`, and `TARGET_ROLES.md` with only facts the sources support, citing the file or user statement and date where useful. Do not treat a CV as official proof of an award or license when a credential document conflicts. Mark conflicts and missing status clearly.
 
 Ask for the few preferences that determine search quality: role priorities, acceptable locations or remote scope, compensation and employment types, exclusions, and submission preference. Record nationality, residence, work authorization, availability, contact information, and referees only from the user or authorized sources and only when relevant. Keep application-specific answers in packets.
 

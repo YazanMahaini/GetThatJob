@@ -2,6 +2,8 @@
 
 This private summary is a working index, not proof by itself. Add sources and the date of each material update. Leave unknown details unresolved.
 
+For recurring form fields absent from the approved CV, see `APPLICATION_PROFILE.md`. Record verified values there with their source, date, and reuse scope so they are not requested again unnecessarily.
+
 ## Source priority
 
 1. Latest direct user instruction for preferences, circumstances, and corrections.

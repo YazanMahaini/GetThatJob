@@ -30,6 +30,14 @@ class WorkspaceTests(unittest.TestCase):
             self.assertEqual(second["status"], "already-initialized")
             self.assertEqual(instructions.read_text(encoding="utf-8"), "Applicant-owned instructions\n")
             self.assertTrue((workspace / ".getthatjob" / "setup.json").is_file())
+            self.assertTrue((workspace / "APPLICATION_PROFILE.md").is_file())
+            marker_before = (workspace / ".getthatjob" / "setup.json").read_text(encoding="utf-8")
+            (workspace / "APPLICATION_PROFILE.md").unlink()
+            repaired = setup(workspace, repair=True)
+            self.assertEqual(repaired["status"], "repaired")
+            self.assertTrue((workspace / "APPLICATION_PROFILE.md").is_file())
+            self.assertEqual((workspace / ".getthatjob" / "setup.json").read_text(encoding="utf-8"), marker_before)
+            self.assertEqual(instructions.read_text(encoding="utf-8"), "Applicant-owned instructions\n")
 
     def test_document_readiness_and_invalid_word_file(self) -> None:
         with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:

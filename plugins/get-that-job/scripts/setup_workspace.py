@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a GetThatJob workspace once, without replacing applicant files."""
+"""Create or safely repair a GetThatJob workspace without replacing applicant files."""
 
 from __future__ import annotations
 
@@ -15,12 +15,13 @@ TEMPLATE_ROOT = PLUGIN_ROOT / "assets" / "workspace"
 MARKER = Path(".getthatjob") / "setup.json"
 
 
-def setup(workspace: Path) -> dict[str, object]:
+def setup(workspace: Path, *, repair: bool = False) -> dict[str, object]:
     workspace = workspace.expanduser().resolve()
     if workspace == PLUGIN_ROOT or PLUGIN_ROOT in workspace.parents:
         raise ValueError("Choose an applicant workspace outside the plugin source.")
     marker_path = workspace / MARKER
-    if marker_path.exists():
+    marker_exists = marker_path.exists()
+    if marker_exists and not repair:
         return {"status": "already-initialized", "workspace": str(workspace), "created": []}
 
     workspace.mkdir(parents=True, exist_ok=True)
@@ -43,6 +44,9 @@ def setup(workspace: Path) -> dict[str, object]:
             shutil.copyfile(source, destination)
             created.append(relative.as_posix())
 
+    if marker_exists:
+        return {"status": "repaired", "workspace": str(workspace), "created": created}
+
     marker_path.parent.mkdir(parents=True, exist_ok=True)
     marker = {
         "schema_version": 1,
@@ -58,8 +62,9 @@ def setup(workspace: Path) -> dict[str, object]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workspace", type=Path, required=True)
+    parser.add_argument("--repair", action="store_true", help="Restore missing template files without changing an existing setup marker")
     args = parser.parse_args()
-    result = setup(args.workspace)
+    result = setup(args.workspace, repair=args.repair)
     print(json.dumps(result, indent=2))
 
 
