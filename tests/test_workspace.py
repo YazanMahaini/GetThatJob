@@ -32,7 +32,16 @@ class WorkspaceTests(unittest.TestCase):
             self.assertTrue((workspace / ".getthatjob" / "setup.json").is_file())
             self.assertTrue((workspace / "APPLICATION_PROFILE.md").is_file())
             marker_before = (workspace / ".getthatjob" / "setup.json").read_text(encoding="utf-8")
-            (workspace / "APPLICATION_PROFILE.md").unlink()
+            profile = workspace / "APPLICATION_PROFILE.md"
+            profile.write_text(
+                profile.read_text(encoding="utf-8")
+                + "\n| Preferred contact time | Morning | Applicant, 2026-01-01 | General | 2026-01-02 |\n",
+                encoding="utf-8",
+            )
+            saved_profile = profile.read_text(encoding="utf-8")
+            setup(workspace, repair=True)
+            self.assertEqual(profile.read_text(encoding="utf-8"), saved_profile)
+            profile.unlink()
             repaired = setup(workspace, repair=True)
             self.assertEqual(repaired["status"], "repaired")
             self.assertTrue((workspace / "APPLICATION_PROFILE.md").is_file())

@@ -12,7 +12,7 @@ Before other plugin work, inspect `.getthatjob/setup.json` in that workspace. If
 Route the active request:
 
 - New or changed CVs, cover letters, certificates, or profile facts: [SetupChecker](../setup-checker/SKILL.md), then [ProfileIntake](../profile-intake/SKILL.md).
-- A filled or materially updated application draft: [ProfileBuilder](../profile-builder/SKILL.md) after draft verification.
+- A filled or materially updated application draft, including one filled outside JobFinder: [ProfileBuilder](../profile-builder/SKILL.md) after verifying its answers.
 - Search, screen, or prepare a role: [JobFinder](../job-finder/SKILL.md). Continue useful searching while unresolved profile inputs are identified.
 - A reviewed application that the user explicitly wants submitted: [ApplicationFinalize](../application-finalize/SKILL.md).
 - A submitted application's receipt: [EmailConfirmationChecker](../email-confirmation-checker/SKILL.md).

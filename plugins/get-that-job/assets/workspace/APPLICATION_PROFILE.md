@@ -1,6 +1,6 @@
 # Reusable application profile (private)
 
-This file holds verified form answers that are useful across applications and are not already clear in the approved CV. Update it after each checked application draft. Keep the exact source and date so future applications can reuse stable facts without asking again. Never put this file in the plugin repository or upload it to an employer.
+This file accumulates verified form answers that are useful across applications and are not already clear in the approved CV. After each checked application draft, merge new or corrected answers into the existing entries; preserve unrelated facts and correction history. Keep the exact source and date so future applications can reuse still-valid answers without asking again. If an application provides no new reusable facts, leave the file as it is. Never put this file in the plugin repository or upload it to an employer.
 
 ## Reusable personal facts
 

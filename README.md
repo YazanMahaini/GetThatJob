@@ -17,7 +17,7 @@ The setup helper uses Python 3 when available. The skills also describe a file-t
 
 ## Add your own sources
 
-Place at least one current, approved CV in `CVs/`. Add official credentials to `Qualifications&Certificates/` as relevant, and optionally put an approved letter example in `CoverLetters/Template/`. ProfileIntake records the applicant's facts, preferred roles, eligibility and source documents in that workspace. After each checked application draft, ProfileBuilder adds newly verified reusable form answers to the private `APPLICATION_PROFILE.md`, with their source and reuse scope. Later forms check it before asking the applicant again. The applicant's CV controls tailored CV styling; this repository contains no CV or cover-letter style template.
+Place at least one current, approved CV in `CVs/`. Add official credentials to `Qualifications&Certificates/` as relevant, and optionally put an approved letter example in `CoverLetters/Template/`. ProfileIntake records the applicant's facts, preferred roles, eligibility and source documents in that workspace. After each checked application draft, ProfileBuilder merges newly verified reusable form answers into the private `APPLICATION_PROFILE.md`, preserving earlier entries and their source and reuse scope. It can also capture verified answers from an application filled outside JobFinder when that application is reviewed. Later forms check the accumulated profile before asking the applicant again. The applicant's CV controls tailored CV styling; this repository contains no CV or cover-letter style template.
 
 ## Application flow
 
