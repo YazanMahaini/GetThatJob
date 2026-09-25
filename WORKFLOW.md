@@ -12,10 +12,11 @@ flowchart TD
     E -- No --> F["You add documents or answer key questions"]
     F --> G["ProfileIntake records verified facts and your document style"]
     G --> D
-    E -- Yes --> H["JobFinder searches and checks eligibility"]
+    E -- Yes --> H["JobFinder searches LinkedIn Jobs and employer sites, checks eligibility, and asks for sign-in if needed"]
     H --> I["Creates a tailored application packet"]
     I --> J["Fills and checks a portal draft when accessible"]
-    J --> P["ProfileBuilder saves new verified reusable answers"]
+    J --> P["ProfileBuilder adds verified reusable answers to the private profile"]
+    X["Checked application filled outside JobFinder"] --> P
     P --> K["You review"]
     K -- Revisions --> I
     K -- You submit --> M["EmailConfirmationChecker looks for a matching receipt"]
