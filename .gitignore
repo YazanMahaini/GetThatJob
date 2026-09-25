@@ -1,0 +1,16 @@
+# Never commit applicant workspaces or local runtime files.
+/.getthatjob/
+/applications/
+/CVs/
+/CoverLetters/
+/Qualifications&Certificates/
+/APPLICATIONS.csv
+/MEMORY.md
+/CV_INDEX.md
+/QUALIFICATIONS_INDEX.md
+/TARGET_ROLES.md
+/SEARCH_LOG.md
+**/__pycache__/
+**/*.pyc
+.DS_Store
+Thumbs.db

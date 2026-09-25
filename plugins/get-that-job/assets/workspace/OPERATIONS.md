@@ -1,0 +1,24 @@
+# Job search and application operations
+
+## Workspace lifecycle
+
+Setup runs once for this workspace and writes `.getthatjob/setup.json`. Run SetupChecker after the user adds or changes source documents, and use ProfileIntake to index verified information. Missing inputs are questions to resolve, not permission to invent facts.
+
+## Opportunity pipeline
+
+For LinkedIn Jobs, use a job-search connector tool when one is available or a signed-in browser. A LinkedIn people-search result is not a job listing. If LinkedIn is signed out, ask the applicant to sign in through the official LinkedIn page or connector flow and continue employer-site searching while access is pending. Record any unsearched source as a coverage gap.
+
+1. Search the user's targets and open the live employer posting. Log source, requisition, date checked, deadline, location, pay, eligibility, and route.
+2. Check `APPLICATIONS.csv`, `SEARCH_LOG.md`, and any accessible application history for duplicates. Compare essential requirements against approved CVs and credential evidence. Mark each as met, unclear, or unmet.
+3. For a strong, eligible role, create `applications/<ID>/README.md`, a tailored CV and a cover letter, plus any requested extras. Use the user's source-document style and requested output format. Preserve originals. Pair every new Word document with a same-stem PDF in the packet, and use the PDF for review and upload unless the employer requires another format. Check text, layout, metadata, and comments.
+4. Fill an accessible portal draft using verified answers when the user's request authorizes preparation. Check what persisted. Leave unknown required answers for the user. Stop before final Apply/Submit, certification, or signing unless the user has separately authorized the specific action. Never sign without explicit instruction for that application.
+5. After authorized submission or user-reported submission, verify a matching receipt or portal confirmation. Record exact status and evidence; follow later changes in the same packet. Do not treat a portal's last-updated timestamp as proof of a new submission without independent evidence.
+6. On request, check later portal or recruiter updates, interviews, deadlines, and outcomes. Preserve original submission evidence and record each change with its source and observation time. Do not respond, withdraw, or accept an offer without the user's applicable instruction.
+
+## Tracker
+
+`APPLICATIONS.csv` is the single index, one row per distinct requisition. Use stable IDs and internal stages such as `discovered`, `shortlisted`, `preparing`, `needs-input`, `ready-for-review`, `submitted`, `interview`, `offer`, `rejected`, `withdrawn`, and `closed`. Keep the employer's wording separately in `portal_status`. Never mark `submitted` from a button click without confirmation.
+
+## Document and privacy checks
+
+Do not invent claims or disclose private credential files when unrequested. If a portal uses a plain-text letter field, adapt the letter to readable paragraphs and its character limit. Inspect rendered deliverables and remove stale source-document metadata or unrelated comments. Store application-specific answers and evidence in the packet, not the durable profile.

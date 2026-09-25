@@ -1,0 +1,20 @@
+{
+  "name": "get-that-job",
+  "interface": {
+    "displayName": "GetThatJob"
+  },
+  "plugins": [
+    {
+      "name": "get-that-job",
+      "source": {
+        "source": "local",
+        "path": "./plugins/get-that-job"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

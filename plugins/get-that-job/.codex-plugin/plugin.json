@@ -1,0 +1,25 @@
+{
+  "name": "get-that-job",
+  "version": "0.1.0",
+  "description": "Set up and run an evidence-led job search and application workspace using each user's own documents.",
+  "author": {
+    "name": "GetThatJob"
+  },
+  "skills": "./skills/",
+  "license": "MIT",
+  "interface": {
+    "displayName": "GetThatJob",
+    "shortDescription": "Find roles and prepare accurate applications.",
+    "longDescription": "Creates a private job-search workspace, checks source documents, prepares tailored applications, and verifies submission evidence.",
+    "developerName": "GetThatJob",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Set up my GetThatJob workspace.",
+      "Check whether my job-search documents are ready.",
+      "Find suitable jobs and prepare applications."
+    ]
+  }
+}
