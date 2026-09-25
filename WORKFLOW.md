@@ -2,7 +2,12 @@
 
 This overview shows how one applicant workspace moves from first setup through a recorded application outcome. Click the image to open it at full resolution.
 
-[![GetThatJob workflow shown as eight large stages in two rows](docs/workflow-diagram.png)](docs/workflow-diagram.png)
+<a href="docs/workflow-diagram.png">
+  <picture>
+    <source media="(max-width: 800px)" srcset="docs/workflow-diagram-compact.png">
+    <img src="docs/workflow-diagram.png" alt="GetThatJob workflow from setup through finding jobs, preparing and confirming applications, tracking outcomes, and reusing verified answers">
+  </picture>
+</a>
 
 ## Detailed decisions and branches
 

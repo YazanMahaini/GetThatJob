@@ -44,49 +44,49 @@ def arrow(d: str, *, dashed: bool = False) -> str:
     )
 
 
-cards = [
-    card(XS[0], TOP_Y, '01  SET UP', (
+steps = [
+    ('01  SET UP', (
         'Ask GetThatJob for help.',
         'SetupSkill creates your',
         'workspace on first use.',
         'SetupChecker finds gaps.',
     )),
-    card(XS[1], TOP_Y, '02  ADD SOURCES', (
+    ('02  ADD SOURCES', (
         'Add CVs, credentials and',
         'search priorities.',
         'ProfileIntake verifies facts',
         'and follows your CV style.',
     )),
-    card(XS[2], TOP_Y, '03  FIND JOBS', (
+    ('03  FIND JOBS', (
         'JobFinder searches LinkedIn',
         'Jobs and employer sites.',
         'It checks fit and eligibility;',
         'you sign in if needed.',
     )),
-    card(XS[3], TOP_Y, '04  PREPARE', (
+    ('04  PREPARE', (
         'Tailor CV and cover letter.',
         'Fill and check a portal draft.',
         'ProfileBuilder saves verified',
         'answers for future forms.',
     )),
-    card(XS[3], BOTTOM_Y, '05  REVIEW', (
+    ('05  REVIEW', (
         'You review the draft and',
         'request any changes.',
         'ApplicationFinalize submits',
         'only with your direction.',
     )),
-    card(XS[2], BOTTOM_Y, '06  CONFIRM', (
+    ('06  CONFIRM', (
         'EmailConfirmationChecker',
         'looks for a matching receipt',
         'and checks portal evidence.',
     )),
-    card(XS[1], BOTTOM_Y, '07  TRACK', (
+    ('07  TRACK', (
         'The tracker and packet',
         'record the outcome.',
         'ApplicationFollowUp checks',
         'later status when requested.',
     )),
-    card(XS[0], BOTTOM_Y, '08  REUSE', (
+    ('08  REUSE', (
         'The next application reads',
         'the private, growing profile.',
         'Scoped or stale facts are',
@@ -94,7 +94,11 @@ cards = [
     )),
 ]
 
-arrows = [
+wide_positions = [
+    (XS[0], TOP_Y), (XS[1], TOP_Y), (XS[2], TOP_Y), (XS[3], TOP_Y),
+    (XS[3], BOTTOM_Y), (XS[2], BOTTOM_Y), (XS[1], BOTTOM_Y), (XS[0], BOTTOM_Y),
+]
+wide_arrows = [
     arrow('M735 410 H875'),
     arrow('M1530 410 H1670'),
     arrow('M2325 410 H2465'),
@@ -105,21 +109,43 @@ arrows = [
     arrow('M80 1190 H35 V410 H80', dashed=True),
 ]
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">
+compact_positions = [
+    (80, 80), (875, 80), (875, 760), (80, 760),
+    (80, 1440), (875, 1440), (875, 2120), (80, 2120),
+]
+compact_arrows = [
+    arrow('M735 360 H875'),
+    arrow('M1202 640 V760'),
+    arrow('M875 1040 H735'),
+    arrow('M407 1320 V1440'),
+    arrow('M735 1720 H875'),
+    arrow('M1202 2000 V2120'),
+    arrow('M875 2400 H735'),
+    arrow('M80 2400 H35 V360 H80', dashed=True),
+]
+
+
+def render(name: str, width: int, height: int, positions: list[tuple[int, int]], arrows: list[str]) -> None:
+    cards = [card(x, y, title, lines) for (title, lines), (x, y) in zip(steps, positions)]
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
 <title id="title">GetThatJob workflow</title>
-<desc id="desc">Eight large steps in two horizontal rows, from first-use setup to reusing verified answers in the next application.</desc>
+<desc id="desc">Eight steps from first-use setup to reusing verified answers in the next application.</desc>
 <defs><marker id="arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="16" markerHeight="16" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11" fill="none" stroke="#6f95b5" stroke-width="2"/></marker></defs>
-<rect width="{WIDTH}" height="{HEIGHT}" fill="#111111"/>
+<rect width="{width}" height="{height}" fill="#111111"/>
 {''.join(arrows)}
 {''.join(cards)}
 </svg>
 '''
 
-(HERE / 'workflow-diagram.svg').write_text(svg, encoding='utf-8')
-cairosvg.svg2png(
-    bytestring=svg.encode('utf-8'),
-    write_to=str(HERE / 'workflow-diagram.png'),
-    output_width=WIDTH,
-    output_height=HEIGHT,
-)
-print(HERE / 'workflow-diagram.png')
+    (HERE / f'{name}.svg').write_text(svg, encoding='utf-8')
+    cairosvg.svg2png(
+        bytestring=svg.encode('utf-8'),
+        write_to=str(HERE / f'{name}.png'),
+        output_width=width,
+        output_height=height,
+    )
+    print(HERE / f'{name}.png')
+
+
+render('workflow-diagram', WIDTH, HEIGHT, wide_positions, wide_arrows)
+render('workflow-diagram-compact', 1610, 2760, compact_positions, compact_arrows)
