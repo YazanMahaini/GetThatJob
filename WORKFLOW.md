@@ -1,6 +1,10 @@
 # GetThatJob workflow
 
-The diagram shows how one applicant workspace moves from first setup through a recorded application outcome.
+This overview shows how one applicant workspace moves from first setup through a recorded application outcome. Click the image to open it at full resolution.
+
+[![GetThatJob workflow shown as eight large stages in two rows](docs/workflow-diagram.png)](docs/workflow-diagram.png)
+
+## Detailed decisions and branches
 
 ```mermaid
 flowchart LR
