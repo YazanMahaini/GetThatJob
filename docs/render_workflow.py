@@ -109,19 +109,10 @@ wide_arrows = [
     arrow('M80 1190 H35 V410 H80', dashed=True),
 ]
 
-compact_positions = [
-    (80, 80), (875, 80), (875, 760), (80, 760),
-    (80, 1440), (875, 1440), (875, 2120), (80, 2120),
-]
+compact_positions = [(80, 80 + index * 680) for index in range(len(steps))]
 compact_arrows = [
-    arrow('M735 360 H875'),
-    arrow('M1202 640 V760'),
-    arrow('M875 1040 H735'),
-    arrow('M407 1320 V1440'),
-    arrow('M735 1720 H875'),
-    arrow('M1202 2000 V2120'),
-    arrow('M875 2400 H735'),
-    arrow('M80 2400 H35 V360 H80', dashed=True),
+    arrow(f'M407 {640 + index * 680} V{760 + index * 680}')
+    for index in range(len(steps) - 1)
 ]
 
 
@@ -148,4 +139,4 @@ def render(name: str, width: int, height: int, positions: list[tuple[int, int]],
 
 
 render('workflow-diagram', WIDTH, HEIGHT, wide_positions, wide_arrows)
-render('workflow-diagram-compact', 1610, 2760, compact_positions, compact_arrows)
+render('workflow-diagram-compact', 815, 5480, compact_positions, compact_arrows)
