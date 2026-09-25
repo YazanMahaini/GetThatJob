@@ -3,7 +3,7 @@
 The diagram shows how one applicant workspace moves from first setup through a recorded application outcome.
 
 ```mermaid
-flowchart TD
+flowchart LR
     A("Ask GetThatJob for help") --> B("First use in this workspace?")
     B -- Yes --> C("SetupSkill creates folders and tracking files")
     B -- No --> D("SetupChecker checks what's available")

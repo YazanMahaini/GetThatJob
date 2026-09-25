@@ -1,13 +1,15 @@
 # GetThatJob
 
-<img src="plugins/get-that-job/assets/brand/get-that-job-logo.png" alt="GetThatJob logo: blue GTJ flowchart mark on a dark square" width="160">
+<p align="center">
+  <img src="plugins/get-that-job/assets/brand/get-that-job-logo.png" alt="GetThatJob logo: blue GTJ flowchart mark on a dark square" width="160">
+</p>
 
 GetThatJob is a Codex plugin for setting up a private job-search workspace, checking applicant documents, finding and assessing roles, preparing applications, building a reusable application profile, and recording verified outcomes. It carries the **workflow**, not an applicant's personal information or document design.
 
 ## How GetThatJob works
 
 ```mermaid
-flowchart TD
+flowchart LR
     A("Ask GetThatJob for help") --> B("First use in this workspace?")
     B -- Yes --> C("SetupSkill creates folders and tracking files")
     B -- No --> D("SetupChecker checks what's available")
