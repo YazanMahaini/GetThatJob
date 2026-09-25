@@ -24,10 +24,25 @@ class WorkspaceTests(unittest.TestCase):
             workspace = Path(directory)
             instructions = workspace / "AGENTS.md"
             instructions.write_text("Applicant-owned instructions\n", encoding="utf-8")
+            tracker = workspace / "APPLICATIONS.csv"
+            tracker.write_bytes(b"Applicant-owned tracker\r\n")
+            (workspace / "CVs").mkdir()
+            cv = workspace / "CVs" / "Approved CV.docx"
+            cv.write_bytes(b"Applicant-owned CV")
+            existing = {file.relative_to(workspace): file.read_bytes()
+                        for file in workspace.rglob("*") if file.is_file()}
+            preview = setup(workspace, dry_run=True)
+            self.assertEqual(preview["status"], "preview-initialize")
+            self.assertFalse((workspace / ".getthatjob").exists())
+            self.assertFalse((workspace / "APPLICATION_PROFILE.md").exists())
+            self.assertEqual({file.relative_to(workspace): file.read_bytes()
+                              for file in workspace.rglob("*") if file.is_file()}, existing)
             first = setup(workspace)
             second = setup(workspace)
             self.assertEqual(first["status"], "initialized")
             self.assertEqual(second["status"], "already-initialized")
+            for relative, content in existing.items():
+                self.assertEqual((workspace / relative).read_bytes(), content)
             self.assertEqual(instructions.read_text(encoding="utf-8"), "Applicant-owned instructions\n")
             self.assertTrue((workspace / ".getthatjob" / "setup.json").is_file())
             self.assertTrue((workspace / "APPLICATION_PROFILE.md").is_file())

@@ -8,14 +8,25 @@ GetThatJob is a Codex plugin for setting up a private job-search workspace, chec
 
 ## How GetThatJob works
 
-<a href="docs/workflow-diagram.png">
-  <picture>
-    <source media="(max-width: 800px)" srcset="docs/workflow-diagram-portrait.png">
-    <img src="docs/workflow-diagram.png" alt="GetThatJob workflow from setup through finding jobs, preparing and confirming applications, tracking outcomes, and reusing verified answers">
-  </picture>
-</a>
+```mermaid
+flowchart TB
+    subgraph first[" "]
+        direction LR
+        A["01 SET UP<br/>Ask GetThatJob for help.<br/>SetupSkill creates the workspace.<br/>SetupChecker finds gaps."] --> B["02 ADD SOURCES<br/>Add CVs, credentials and priorities.<br/>ProfileIntake verifies facts<br/>and follows your CV style."] --> C["03 FIND JOBS<br/>JobFinder searches LinkedIn Jobs<br/>and employer sites.<br/>It checks fit and eligibility."] --> D["04 PREPARE<br/>Tailor CV and cover letter.<br/>Fill and check a portal draft.<br/>ProfileBuilder saves verified answers."]
+    end
+    subgraph second[" "]
+        direction RL
+        E["05 REVIEW<br/>You review and request changes.<br/>ApplicationFinalize submits<br/>only with your direction."] --> F["06 CONFIRM<br/>EmailConfirmationChecker looks<br/>for a matching receipt<br/>and checks portal evidence."] --> G["07 TRACK<br/>Tracker and packet record outcome.<br/>ApplicationFollowUp checks<br/>later status when requested."] --> H["08 REUSE<br/>The next application reads the<br/>private, growing profile.<br/>Scoped facts are rechecked."]
+    end
+    first --> second
+    classDef step fill:#00182f,stroke:#355675,color:#d9e8f6,stroke-width:2px;
+    class A,B,C,D,E,F,G,H step;
+    style first fill:transparent,stroke:transparent
+    style second fill:transparent,stroke:transparent
+    linkStyle default stroke:#6f95b5,stroke-width:2px;
+```
 
-Click the image to open it at full resolution. The [detailed workflow](WORKFLOW.md) shows the decisions and branches.
+The [detailed interactive workflow](WORKFLOW.md) shows every decision and branch. It also offers full-resolution [horizontal](docs/workflow-detailed-horizontal.png) and [vertical](docs/workflow-detailed-vertical.png) PNGs.
 
 ## Install in Codex
 
@@ -29,6 +40,10 @@ codex plugin add get-that-job@get-that-job
 Start a new Codex task after installation so the skills are available. Ask: “Use GetThatJob to set up my job-search workspace.” The first use in each workspace creates folders and blank records without overwriting existing files. Later uses check the setup marker and continue from the saved state.
 
 The setup helper uses Python 3 when available. The skills also describe a file-tool fallback for systems without Python.
+
+### Use an existing workspace
+
+Point GetThatJob to the existing job-search folder. It previews additions with `setup_workspace.py --workspace <path> --dry-run`, then creates only missing scaffold files and a per-workspace setup marker. Existing files are opened in create-only mode and never replaced, truncated, or removed; an existing but malformed tracker or Markdown file is reported for review rather than reset. Subsequent runs see the marker and make no setup changes. Normal job-search work can still update the applicant's tracker and notes as new verified information arrives.
 
 ## Add your own sources
 

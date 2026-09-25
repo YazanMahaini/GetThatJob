@@ -1,13 +1,6 @@
 # GetThatJob workflow
 
-This overview shows how one applicant workspace moves from first setup through a recorded application outcome. Click the image to open it at full resolution.
-
-<a href="docs/workflow-diagram.png">
-  <picture>
-    <source media="(max-width: 800px)" srcset="docs/workflow-diagram-portrait.png">
-    <img src="docs/workflow-diagram.png" alt="GetThatJob workflow from setup through finding jobs, preparing and confirming applications, tracking outcomes, and reusing verified answers">
-  </picture>
-</a>
+This interactive diagram shows the decisions and branches from workspace setup through a recorded application outcome. Use GitHub's diagram controls to zoom and pan.
 
 ## Detailed decisions and branches
 
@@ -42,5 +35,24 @@ flowchart LR
     class B,E decision;
     linkStyle default stroke:#777777,stroke-width:1.5px;
 ```
+
+## Full-resolution PNGs
+
+- [Horizontal detailed workflow (4152 × 2766 pixels)](docs/workflow-detailed-horizontal.png)
+- [Vertical detailed workflow (3616 × 5120 pixels)](docs/workflow-detailed-vertical.png)
+
+<details>
+<summary>Preview the horizontal PNG</summary>
+
+[![Horizontal detailed GetThatJob workflow](docs/workflow-detailed-horizontal.png)](docs/workflow-detailed-horizontal.png)
+
+</details>
+
+<details>
+<summary>Preview the vertical PNG</summary>
+
+[![Vertical detailed GetThatJob workflow](docs/workflow-detailed-vertical.png)](docs/workflow-detailed-vertical.png)
+
+</details>
 
 The workspace contains `CVs/`, `CoverLetters/`, `Qualifications&Certificates/`, `applications/`, `APPLICATION_PROFILE.md`, and the other Markdown and CSV source indexes. Setup runs once per applicant workspace. A search request may authorize filling a reversible draft; final submission and application signing have separate authorization boundaries. Later follow-up is recorded in the same application packet.

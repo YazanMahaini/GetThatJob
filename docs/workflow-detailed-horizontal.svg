@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2076" height="1383" viewBox="0 0 2076 1383">
+<rect width="100%" height="100%" fill="#111111"/>
+<text x="80" y="78" fill="#70b5f3" font-family="Arial" font-size="42" font-weight="bold">1. SET UP AND FIND</text>
+<text x="1194" y="78" fill="#70b5f3" font-family="Arial" font-size="42" font-weight="bold">2. PREPARE AND FOLLOW UP</text>
+<svg x="80" y="220" width="854" height="933" viewBox="0.00 0.00 854.00 933.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(36 897.24)">
+<title>GetThatJob</title>
+<polygon fill="#111111" stroke="none" points="-36,36 -36,-897.24 818.28,-897.24 818.28,36 -36,36"/>
+<!-- start&#45;&gt;first -->
+<g id="edge1" class="edge">
+<title>start&#45;&gt;first</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M296.87,-800.26C296.87,-782.52 296.87,-758.17 296.87,-738.33"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="299.67,-738.56 296.87,-730.56 294.07,-738.56 299.67,-738.56"/>
+</g>
+<!-- first&#45;&gt;setup -->
+<g id="edge2" class="edge">
+<title>first&#45;&gt;setup</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M272.66,-677.3C253.09,-657.86 225.04,-629.99 201.57,-606.66"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="203.6,-604.73 195.95,-601.08 199.65,-608.7 203.6,-604.73"/>
+<text xml:space="preserve" text-anchor="middle" x="252.75" y="-633.5" font-family="Arial" font-size="15.00" fill="#70b5f3">Yes</text>
+</g>
+<!-- first&#45;&gt;check -->
+<g id="edge3" class="edge">
+<title>first&#45;&gt;check</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M305.08,-677.13C315.42,-646.58 331.87,-598 331.87,-598 331.87,-598 331.87,-526.48 331.87,-526.48 331.87,-526.48 318.33,-487.61 307.86,-457.54"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="310.58,-456.85 305.31,-450.21 305.29,-458.69 310.58,-456.85"/>
+<text xml:space="preserve" text-anchor="middle" x="341.46" y="-557.74" font-family="Arial" font-size="15.00" fill="#70b5f3">No</text>
+</g>
+<!-- setup&#45;&gt;check -->
+<g id="edge4" class="edge">
+<title>setup&#45;&gt;check</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M193.41,-525.67C215.22,-503.84 242.92,-476.12 264.01,-455.01"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="265.94,-457.04 269.61,-449.4 261.98,-453.08 265.94,-457.04"/>
+</g>
+<!-- check&#45;&gt;ready -->
+<g id="edge5" class="edge">
+<title>check&#45;&gt;ready</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M295.87,-396.77C295.87,-382 295.87,-362.89 295.87,-346.51"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="298.67,-346.71 295.87,-338.71 293.07,-346.71 298.67,-346.71"/>
+</g>
+<!-- ready&#45;&gt;add -->
+<g id="edge6" class="edge">
+<title>ready&#45;&gt;add</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M276.71,-285.34C261.36,-266.07 239.41,-238.51 220.94,-215.31"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="223.37,-213.87 216.19,-209.35 218.99,-217.35 223.37,-213.87"/>
+<text xml:space="preserve" text-anchor="middle" x="260.31" y="-241.54" font-family="Arial" font-size="15.00" fill="#70b5f3">No</text>
+</g>
+<!-- ready&#45;&gt;search -->
+<g id="edge9" class="edge">
+<title>ready&#45;&gt;search</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M324.56,-285.31C349.62,-264.26 382.02,-237.04 382.02,-237.04 382.02,-237.04 409.52,-224.97 440.95,-211.18"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="441.84,-213.85 448.04,-208.07 439.59,-208.72 441.84,-213.85"/>
+<text xml:space="preserve" text-anchor="middle" x="394.95" y="-241.54" font-family="Arial" font-size="15.00" fill="#70b5f3">Yes</text>
+</g>
+<!-- add&#45;&gt;intake -->
+<g id="edge7" class="edge">
+<title>add&#45;&gt;intake</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M185.87,-133.77C185.87,-118.17 185.87,-99.65 185.87,-83"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="188.67,-83.4 185.87,-75.4 183.07,-83.4 188.67,-83.4"/>
+</g>
+<!-- intake&#45;&gt;check -->
+<g id="edge8" class="edge">
+<title>intake&#45;&gt;check</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M345.55,-66.16C501.93,-94.95 716.87,-134.52 716.87,-134.52 716.87,-134.52 716.87,-206.04 716.87,-206.04 716.87,-206.04 468.16,-333.1 353.06,-391.9"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="351.89,-389.36 346.04,-395.49 354.44,-394.34 351.89,-389.36"/>
+</g>
+<!-- search&#45;&gt;signin -->
+<g id="edge10" class="edge">
+<title>search&#45;&gt;signin</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M548.35,-206.96C563.91,-240.65 584.87,-286.04 584.87,-286.04 584.87,-286.04 604.99,-647.12 612.28,-777.9"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="609.47,-777.88 612.71,-785.71 615.06,-777.57 609.47,-777.88"/>
+<text xml:space="preserve" text-anchor="middle" x="632.33" y="-481.98" font-family="Arial" font-size="15.00" fill="#70b5f3">Signed out</text>
+</g>
+<!-- signin&#45;&gt;search -->
+<g id="edge11" class="edge">
+<title>signin&#45;&gt;search</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M605.93,-788.96C584.5,-703.89 532.02,-495.48 532.02,-495.48 532.02,-495.48 531.93,-307.54 531.89,-217.85"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="534.69,-217.93 531.89,-209.93 529.09,-217.93 534.69,-217.93"/>
+<text xml:space="preserve" text-anchor="middle" x="559.94" y="-481.98" font-family="Arial" font-size="15.00" fill="#70b5f3">Resume</text>
+</g>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M403.15,-849.84C403.15,-849.84 190.59,-849.84 190.59,-849.84 184.59,-849.84 178.59,-843.84 178.59,-837.84 178.59,-837.84 178.59,-813.12 178.59,-813.12 178.59,-807.12 184.59,-801.12 190.59,-801.12 190.59,-801.12 403.15,-801.12 403.15,-801.12 409.15,-801.12 415.15,-807.12 415.15,-813.12 415.15,-813.12 415.15,-837.84 415.15,-837.84 415.15,-843.84 409.15,-849.84 403.15,-849.84"/>
+<text xml:space="preserve" text-anchor="middle" x="296.87" y="-819.78" font-family="Arial" font-size="19.00" fill="#d9e8f6">Ask GetThatJob for help</text>
+</g>
+<!-- first -->
+<g id="node2" class="node">
+<title>first</title>
+<path fill="#111111" stroke="#70b5f3" stroke-width="2" stroke-dasharray="5,2" d="M417.92,-726.72C417.92,-726.72 175.82,-726.72 175.82,-726.72 169.82,-726.72 163.82,-720.72 163.82,-714.72 163.82,-714.72 163.82,-690 163.82,-690 163.82,-684 169.82,-678 175.82,-678 175.82,-678 417.92,-678 417.92,-678 423.92,-678 429.92,-684 429.92,-690 429.92,-690 429.92,-714.72 429.92,-714.72 429.92,-720.72 423.92,-726.72 417.92,-726.72"/>
+<text xml:space="preserve" text-anchor="middle" x="296.87" y="-696.66" font-family="Arial" font-size="19.00" fill="#d9e8f6">First use in this workspace?</text>
+</g>
+<!-- setup -->
+<g id="node3" class="node">
+<title>setup</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M303.74,-598C303.74,-598 12,-598 12,-598 6,-598 0,-592 0,-586 0,-586 0,-538.48 0,-538.48 0,-532.48 6,-526.48 12,-526.48 12,-526.48 303.74,-526.48 303.74,-526.48 309.74,-526.48 315.74,-532.48 315.74,-538.48 315.74,-538.48 315.74,-586 315.74,-586 315.74,-592 309.74,-598 303.74,-598"/>
+<text xml:space="preserve" text-anchor="middle" x="157.87" y="-567.94" font-family="Arial" font-size="19.00" fill="#d9e8f6">SetupSkill creates missing folders</text>
+<text xml:space="preserve" text-anchor="middle" x="157.87" y="-545.14" font-family="Arial" font-size="19.00" fill="#d9e8f6">and blank tracking files</text>
+</g>
+<!-- check -->
+<g id="node4" class="node">
+<title>check</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M464.46,-446.48C464.46,-446.48 127.28,-446.48 127.28,-446.48 121.28,-446.48 115.28,-440.48 115.28,-434.48 115.28,-434.48 115.28,-409.76 115.28,-409.76 115.28,-403.76 121.28,-397.76 127.28,-397.76 127.28,-397.76 464.46,-397.76 464.46,-397.76 470.46,-397.76 476.46,-403.76 476.46,-409.76 476.46,-409.76 476.46,-434.48 476.46,-434.48 476.46,-440.48 470.46,-446.48 464.46,-446.48"/>
+<text xml:space="preserve" text-anchor="middle" x="295.87" y="-416.42" font-family="Arial" font-size="19.00" fill="#d9e8f6">SetupChecker checks what is available</text>
+</g>
+<!-- ready -->
+<g id="node5" class="node">
+<title>ready</title>
+<path fill="#111111" stroke="#70b5f3" stroke-width="2" stroke-dasharray="5,2" d="M432.78,-334.76C432.78,-334.76 158.97,-334.76 158.97,-334.76 152.97,-334.76 146.97,-328.76 146.97,-322.76 146.97,-322.76 146.97,-298.04 146.97,-298.04 146.97,-292.04 152.97,-286.04 158.97,-286.04 158.97,-286.04 432.78,-286.04 432.78,-286.04 438.78,-286.04 444.78,-292.04 444.78,-298.04 444.78,-298.04 444.78,-322.76 444.78,-322.76 444.78,-328.76 438.78,-334.76 432.78,-334.76"/>
+<text xml:space="preserve" text-anchor="middle" x="295.87" y="-304.7" font-family="Arial" font-size="19.00" fill="#d9e8f6">CV and search priorities ready?</text>
+</g>
+<!-- add -->
+<g id="node6" class="node">
+<title>add</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M318.56,-206.04C318.56,-206.04 53.18,-206.04 53.18,-206.04 47.18,-206.04 41.18,-200.04 41.18,-194.04 41.18,-194.04 41.18,-146.52 41.18,-146.52 41.18,-140.52 47.18,-134.52 53.18,-134.52 53.18,-134.52 318.56,-134.52 318.56,-134.52 324.56,-134.52 330.56,-140.52 330.56,-146.52 330.56,-146.52 330.56,-194.04 330.56,-194.04 330.56,-200.04 324.56,-206.04 318.56,-206.04"/>
+<text xml:space="preserve" text-anchor="middle" x="185.87" y="-175.98" font-family="Arial" font-size="19.00" fill="#d9e8f6">You add documents or answer</text>
+<text xml:space="preserve" text-anchor="middle" x="185.87" y="-153.18" font-family="Arial" font-size="19.00" fill="#d9e8f6">key questions</text>
+</g>
+<!-- intake -->
+<g id="node7" class="node">
+<title>intake</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M332.8,-71.52C332.8,-71.52 38.94,-71.52 38.94,-71.52 32.94,-71.52 26.94,-65.52 26.94,-59.52 26.94,-59.52 26.94,-12 26.94,-12 26.94,-6 32.94,0 38.94,0 38.94,0 332.8,0 332.8,0 338.8,0 344.8,-6 344.8,-12 344.8,-12 344.8,-59.52 344.8,-59.52 344.8,-65.52 338.8,-71.52 332.8,-71.52"/>
+<text xml:space="preserve" text-anchor="middle" x="185.87" y="-41.46" font-family="Arial" font-size="19.00" fill="#d9e8f6">ProfileIntake records verified facts</text>
+<text xml:space="preserve" text-anchor="middle" x="185.87" y="-18.66" font-family="Arial" font-size="19.00" fill="#d9e8f6">and follows your document style</text>
+</g>
+<!-- search -->
+<g id="node8" class="node">
+<title>search</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M688.83,-206.04C688.83,-206.04 374.91,-206.04 374.91,-206.04 368.91,-206.04 362.91,-200.04 362.91,-194.04 362.91,-194.04 362.91,-146.52 362.91,-146.52 362.91,-140.52 368.91,-134.52 374.91,-134.52 374.91,-134.52 688.83,-134.52 688.83,-134.52 694.83,-134.52 700.83,-140.52 700.83,-146.52 700.83,-146.52 700.83,-194.04 700.83,-194.04 700.83,-200.04 694.83,-206.04 688.83,-206.04"/>
+<text xml:space="preserve" text-anchor="middle" x="531.87" y="-175.98" font-family="Arial" font-size="19.00" fill="#d9e8f6">JobFinder searches LinkedIn Jobs</text>
+<text xml:space="preserve" text-anchor="middle" x="531.87" y="-153.18" font-family="Arial" font-size="19.00" fill="#d9e8f6">and employer sites; checks eligibility</text>
+</g>
+<!-- signin -->
+<g id="node9" class="node">
+<title>signin</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M770.28,-861.24C770.28,-861.24 459.46,-861.24 459.46,-861.24 453.46,-861.24 447.46,-855.24 447.46,-849.24 447.46,-849.24 447.46,-801.72 447.46,-801.72 447.46,-795.72 453.46,-789.72 459.46,-789.72 459.46,-789.72 770.28,-789.72 770.28,-789.72 776.28,-789.72 782.28,-795.72 782.28,-801.72 782.28,-801.72 782.28,-849.24 782.28,-849.24 782.28,-855.24 776.28,-861.24 770.28,-861.24"/>
+<text xml:space="preserve" text-anchor="middle" x="614.87" y="-831.18" font-family="Arial" font-size="19.00" fill="#d9e8f6">If signed out, you sign in to LinkedIn</text>
+<text xml:space="preserve" text-anchor="middle" x="614.87" y="-808.38" font-family="Arial" font-size="19.00" fill="#d9e8f6">through its official flow</text>
+</g>
+</g>
+</svg>
+<svg x="1194" y="130" width="802" height="1113" viewBox="0.00 0.00 802.00 1113.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(36 1077.36)">
+<title>GetThatJob</title>
+<polygon fill="#111111" stroke="none" points="-36,36 -36,-1077.36 766.29,-1077.36 766.29,36 -36,36"/>
+<!-- packet&#45;&gt;draft -->
+<g id="edge1" class="edge">
+<title>packet&#45;&gt;draft</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M154.18,-969.09C154.18,-953.49 154.18,-934.97 154.18,-918.32"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="156.98,-918.72 154.18,-910.72 151.38,-918.72 156.98,-918.72"/>
+</g>
+<!-- draft&#45;&gt;profile -->
+<g id="edge2" class="edge">
+<title>draft&#45;&gt;profile</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M207.79,-834.46C240.48,-812.73 282.41,-784.86 316.62,-762.13"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="317.96,-764.6 323.07,-757.85 314.86,-759.94 317.96,-764.6"/>
+</g>
+<!-- outside&#45;&gt;profile -->
+<g id="edge3" class="edge">
+<title>outside&#45;&gt;profile</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M480.66,-834.65C461.91,-813.57 437.98,-786.67 418.07,-764.28"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="420.35,-762.64 412.94,-758.52 416.17,-766.36 420.35,-762.64"/>
+</g>
+<!-- profile&#45;&gt;review -->
+<g id="edge4" class="edge">
+<title>profile&#45;&gt;review</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M379.18,-682.88C379.18,-667.04 379.18,-648.46 379.18,-632.68"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="381.98,-632.79 379.18,-624.79 376.38,-632.79 381.98,-632.79"/>
+</g>
+<!-- review&#45;&gt;packet -->
+<g id="edge5" class="edge">
+<title>review&#45;&gt;packet</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M435.42,-621.73C494.58,-647.27 579.18,-683.8 579.18,-683.8 579.18,-683.8 579.18,-755.32 579.18,-755.32 579.18,-755.32 366.18,-835.32 366.18,-835.32 366.18,-835.32 300.18,-906.84 300.18,-906.84 300.18,-906.84 255.98,-936.43 216.23,-963.05"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="214.91,-960.57 209.82,-967.35 218.02,-965.22 214.91,-960.57"/>
+<text xml:space="preserve" text-anchor="middle" x="527.17" y="-790.82" font-family="Arial" font-size="15.00" fill="#70b5f3">Revisions</text>
+</g>
+<!-- review&#45;&gt;selfsubmit -->
+<g id="edge6" class="edge">
+<title>review&#45;&gt;selfsubmit</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M349.57,-571.38C321.22,-548.35 278.32,-513.49 247.4,-488.37"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="249.35,-486.35 241.37,-483.48 245.81,-490.69 249.35,-486.35"/>
+<text xml:space="preserve" text-anchor="middle" x="346.92" y="-527.58" font-family="Arial" font-size="15.00" fill="#70b5f3">You submit</text>
+</g>
+<!-- review&#45;&gt;finalize -->
+<g id="edge7" class="edge">
+<title>review&#45;&gt;finalize</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M408.79,-571.38C433.03,-551.68 467.92,-523.34 496.86,-499.83"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="498.44,-502.15 502.88,-494.93 494.91,-497.8 498.44,-502.15"/>
+<text xml:space="preserve" text-anchor="middle" x="515.03" y="-527.58" font-family="Arial" font-size="15.00" fill="#70b5f3">Ask it to submit</text>
+</g>
+<!-- selfsubmit&#45;&gt;confirm -->
+<g id="edge8" class="edge">
+<title>selfsubmit&#45;&gt;confirm</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M240.18,-431.01C263.67,-412.59 296.52,-386.83 324.29,-365.06"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="325.77,-367.45 330.34,-360.31 322.32,-363.04 325.77,-367.45"/>
+</g>
+<!-- finalize&#45;&gt;confirm -->
+<g id="edge9" class="edge">
+<title>finalize&#45;&gt;confirm</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M503.35,-419.81C481.6,-402.95 455.44,-382.67 432.67,-365.03"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="434.56,-362.95 426.52,-360.27 431.13,-367.38 434.56,-362.95"/>
+</g>
+<!-- confirm&#45;&gt;tracker -->
+<g id="edge10" class="edge">
+<title>confirm&#45;&gt;tracker</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M378.18,-285.29C378.18,-269.69 378.18,-251.17 378.18,-234.52"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="380.98,-234.92 378.18,-226.92 375.38,-234.92 380.98,-234.92"/>
+</g>
+<!-- tracker&#45;&gt;followup -->
+<g id="edge11" class="edge">
+<title>tracker&#45;&gt;followup</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M376.43,-150.71C375.67,-135.21 374.94,-120.52 374.94,-120.52 374.94,-120.52 374.94,-102.52 374.94,-102.52 374.94,-102.52 375.36,-94.08 375.89,-83.25"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="378.68,-83.49 376.28,-75.36 373.09,-83.21 378.68,-83.49"/>
+<text xml:space="preserve" text-anchor="middle" x="417.06" y="-107.02" font-family="Arial" font-size="15.00" fill="#70b5f3">Later update</text>
+</g>
+<!-- followup&#45;&gt;tracker -->
+<g id="edge12" class="edge">
+<title>followup&#45;&gt;tracker</title>
+<path fill="none" stroke="#6f95b5" stroke-width="2" d="M424.16,-72.33C444.19,-87.83 463.18,-102.52 463.18,-102.52 463.18,-102.52 463.18,-120.52 463.18,-120.52 463.18,-120.52 449.16,-131.37 432.5,-144.26"/>
+<polygon fill="#6f95b5" stroke="#6f95b5" stroke-width="2" points="431.17,-141.74 426.56,-148.85 434.6,-146.17 431.17,-141.74"/>
+</g>
+<!-- packet -->
+<g id="node1" class="node">
+<title>packet</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M296.36,-1041.36C296.36,-1041.36 12,-1041.36 12,-1041.36 6,-1041.36 0,-1035.36 0,-1029.36 0,-1029.36 0,-981.84 0,-981.84 0,-975.84 6,-969.84 12,-969.84 12,-969.84 296.36,-969.84 296.36,-969.84 302.36,-969.84 308.36,-975.84 308.36,-981.84 308.36,-981.84 308.36,-1029.36 308.36,-1029.36 308.36,-1035.36 302.36,-1041.36 296.36,-1041.36"/>
+<text xml:space="preserve" text-anchor="middle" x="154.18" y="-1011.3" font-family="Arial" font-size="19.00" fill="#d9e8f6">Create a tailored CV, cover letter</text>
+<text xml:space="preserve" text-anchor="middle" x="154.18" y="-988.5" font-family="Arial" font-size="19.00" fill="#d9e8f6">and application packet</text>
+</g>
+<!-- draft -->
+<g id="node2" class="node">
+<title>draft</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M272.07,-906.84C272.07,-906.84 36.28,-906.84 36.28,-906.84 30.28,-906.84 24.28,-900.84 24.28,-894.84 24.28,-894.84 24.28,-847.32 24.28,-847.32 24.28,-841.32 30.28,-835.32 36.28,-835.32 36.28,-835.32 272.07,-835.32 272.07,-835.32 278.07,-835.32 284.07,-841.32 284.07,-847.32 284.07,-847.32 284.07,-894.84 284.07,-894.84 284.07,-900.84 278.07,-906.84 272.07,-906.84"/>
+<text xml:space="preserve" text-anchor="middle" x="154.18" y="-876.78" font-family="Arial" font-size="19.00" fill="#d9e8f6">Fill and check a portal draft</text>
+<text xml:space="preserve" text-anchor="middle" x="154.18" y="-853.98" font-family="Arial" font-size="19.00" fill="#d9e8f6">when accessible</text>
+</g>
+<!-- outside -->
+<g id="node3" class="node">
+<title>outside</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M630.62,-906.84C630.62,-906.84 393.74,-906.84 393.74,-906.84 387.74,-906.84 381.74,-900.84 381.74,-894.84 381.74,-894.84 381.74,-847.32 381.74,-847.32 381.74,-841.32 387.74,-835.32 393.74,-835.32 393.74,-835.32 630.62,-835.32 630.62,-835.32 636.62,-835.32 642.62,-841.32 642.62,-847.32 642.62,-847.32 642.62,-894.84 642.62,-894.84 642.62,-900.84 636.62,-906.84 630.62,-906.84"/>
+<text xml:space="preserve" text-anchor="middle" x="512.18" y="-876.78" font-family="Arial" font-size="19.00" fill="#d9e8f6">A checked application filled</text>
+<text xml:space="preserve" text-anchor="middle" x="512.18" y="-853.98" font-family="Arial" font-size="19.00" fill="#d9e8f6">outside JobFinder</text>
+</g>
+<!-- profile -->
+<g id="node4" class="node">
+<title>profile</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M550.94,-755.32C550.94,-755.32 207.41,-755.32 207.41,-755.32 201.41,-755.32 195.41,-749.32 195.41,-743.32 195.41,-743.32 195.41,-695.8 195.41,-695.8 195.41,-689.8 201.41,-683.8 207.41,-683.8 207.41,-683.8 550.94,-683.8 550.94,-683.8 556.94,-683.8 562.94,-689.8 562.94,-695.8 562.94,-695.8 562.94,-743.32 562.94,-743.32 562.94,-749.32 556.94,-755.32 550.94,-755.32"/>
+<text xml:space="preserve" text-anchor="middle" x="379.18" y="-725.26" font-family="Arial" font-size="19.00" fill="#d9e8f6">ProfileBuilder merges verified</text>
+<text xml:space="preserve" text-anchor="middle" x="379.18" y="-702.46" font-family="Arial" font-size="19.00" fill="#d9e8f6">reusable answers into the private profile</text>
+</g>
+<!-- review -->
+<g id="node5" class="node">
+<title>review</title>
+<path fill="#111111" stroke="#70b5f3" stroke-width="2" stroke-dasharray="5,2" d="M493.92,-620.8C493.92,-620.8 264.44,-620.8 264.44,-620.8 258.44,-620.8 252.44,-614.8 252.44,-608.8 252.44,-608.8 252.44,-584.08 252.44,-584.08 252.44,-578.08 258.44,-572.08 264.44,-572.08 264.44,-572.08 493.92,-572.08 493.92,-572.08 499.92,-572.08 505.92,-578.08 505.92,-584.08 505.92,-584.08 505.92,-608.8 505.92,-608.8 505.92,-614.8 499.92,-620.8 493.92,-620.8"/>
+<text xml:space="preserve" text-anchor="middle" x="379.18" y="-590.74" font-family="Arial" font-size="19.00" fill="#d9e8f6">You review the application</text>
+</g>
+<!-- selfsubmit -->
+<g id="node6" class="node">
+<title>selfsubmit</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M324.45,-480.68C324.45,-480.68 93.91,-480.68 93.91,-480.68 87.91,-480.68 81.91,-474.68 81.91,-468.68 81.91,-468.68 81.91,-443.96 81.91,-443.96 81.91,-437.96 87.91,-431.96 93.91,-431.96 93.91,-431.96 324.45,-431.96 324.45,-431.96 330.45,-431.96 336.45,-437.96 336.45,-443.96 336.45,-443.96 336.45,-468.68 336.45,-468.68 336.45,-474.68 330.45,-480.68 324.45,-480.68"/>
+<text xml:space="preserve" text-anchor="middle" x="209.18" y="-450.62" font-family="Arial" font-size="19.00" fill="#d9e8f6">You submit the application</text>
+</g>
+<!-- finalize -->
+<g id="node7" class="node">
+<title>finalize</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M718.29,-492.08C718.29,-492.08 380.06,-492.08 380.06,-492.08 374.06,-492.08 368.06,-486.08 368.06,-480.08 368.06,-480.08 368.06,-432.56 368.06,-432.56 368.06,-426.56 374.06,-420.56 380.06,-420.56 380.06,-420.56 718.29,-420.56 718.29,-420.56 724.29,-420.56 730.29,-426.56 730.29,-432.56 730.29,-432.56 730.29,-480.08 730.29,-480.08 730.29,-486.08 724.29,-492.08 718.29,-492.08"/>
+<text xml:space="preserve" text-anchor="middle" x="549.18" y="-462.02" font-family="Arial" font-size="19.00" fill="#d9e8f6">ApplicationFinalize checks and submits</text>
+<text xml:space="preserve" text-anchor="middle" x="549.18" y="-439.22" font-family="Arial" font-size="19.00" fill="#d9e8f6">only with your direction</text>
+</g>
+<!-- confirm -->
+<g id="node8" class="node">
+<title>confirm</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M527.21,-357.56C527.21,-357.56 229.15,-357.56 229.15,-357.56 223.15,-357.56 217.15,-351.56 217.15,-345.56 217.15,-345.56 217.15,-298.04 217.15,-298.04 217.15,-292.04 223.15,-286.04 229.15,-286.04 229.15,-286.04 527.21,-286.04 527.21,-286.04 533.21,-286.04 539.21,-292.04 539.21,-298.04 539.21,-298.04 539.21,-345.56 539.21,-345.56 539.21,-351.56 533.21,-357.56 527.21,-357.56"/>
+<text xml:space="preserve" text-anchor="middle" x="378.18" y="-327.5" font-family="Arial" font-size="19.00" fill="#d9e8f6">EmailConfirmationChecker checks</text>
+<text xml:space="preserve" text-anchor="middle" x="378.18" y="-304.7" font-family="Arial" font-size="19.00" fill="#d9e8f6">for a matching receipt</text>
+</g>
+<!-- tracker -->
+<g id="node9" class="node">
+<title>tracker</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M492.9,-223.04C492.9,-223.04 263.46,-223.04 263.46,-223.04 257.46,-223.04 251.46,-217.04 251.46,-211.04 251.46,-211.04 251.46,-163.52 251.46,-163.52 251.46,-157.52 257.46,-151.52 263.46,-151.52 263.46,-151.52 492.9,-151.52 492.9,-151.52 498.9,-151.52 504.9,-157.52 504.9,-163.52 504.9,-163.52 504.9,-211.04 504.9,-211.04 504.9,-217.04 498.9,-223.04 492.9,-223.04"/>
+<text xml:space="preserve" text-anchor="middle" x="378.18" y="-192.98" font-family="Arial" font-size="19.00" fill="#d9e8f6">Tracker and packet record</text>
+<text xml:space="preserve" text-anchor="middle" x="378.18" y="-170.18" font-family="Arial" font-size="19.00" fill="#d9e8f6">the verified outcome</text>
+</g>
+<!-- followup -->
+<g id="node10" class="node">
+<title>followup</title>
+<path fill="#00182f" stroke="#355675" stroke-width="2" d="M500.3,-71.52C500.3,-71.52 256.06,-71.52 256.06,-71.52 250.06,-71.52 244.06,-65.52 244.06,-59.52 244.06,-59.52 244.06,-12 244.06,-12 244.06,-6 250.06,0 256.06,0 256.06,0 500.3,0 500.3,0 506.3,0 512.3,-6 512.3,-12 512.3,-12 512.3,-59.52 512.3,-59.52 512.3,-65.52 506.3,-71.52 500.3,-71.52"/>
+<text xml:space="preserve" text-anchor="middle" x="378.18" y="-41.46" font-family="Arial" font-size="19.00" fill="#d9e8f6">ApplicationFollowUp checks</text>
+<text xml:space="preserve" text-anchor="middle" x="378.18" y="-18.66" font-family="Arial" font-size="19.00" fill="#d9e8f6">later status when requested</text>
+</g>
+</g>
+</svg>
+<path d="M979 686.5 H1149" stroke="#70b5f3" stroke-width="8" fill="none" marker-end="url(#arrow)"/>
+<defs><marker id="arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="16" markerHeight="16" orient="auto"><path d="M1 1 L11 6 L1 11" fill="none" stroke="#70b5f3" stroke-width="2"/></marker></defs>
+<text x="1038" y="1328" text-anchor="middle" fill="#d9e8f6" font-family="Arial" font-size="30">Next role: reuse confirmed answers and recheck scoped facts before returning to JobFinder.</text>
+</svg>

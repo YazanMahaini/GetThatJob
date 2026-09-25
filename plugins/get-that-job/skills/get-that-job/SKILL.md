@@ -7,7 +7,7 @@ description: Route GetThatJob requests through first-use workspace setup, docume
 
 Use this as the plugin's entry point. Resolve the applicant workspace from the user's explicit path, then an existing workspace in the current project, or a new `GetThatJob` folder beside an unrelated current project. Do not place applicant documents in the plugin source. Explain the selected location.
 
-Before other plugin work, inspect `.getthatjob/setup.json` in that workspace. If absent, use [SetupSkill](../setup-skill/SKILL.md) once. The marker is per workspace: a different applicant or new workspace needs its own first setup. If present, never rerun setup merely because a source file is missing; use [SetupChecker](../setup-checker/SKILL.md) to find gaps and repair only the affected workspace files as appropriate.
+Before other plugin work, inspect `.getthatjob/setup.json` in that workspace. If absent, use [SetupSkill](../setup-skill/SKILL.md) once. For an established applicant workspace, preview additions first and preserve every existing folder, Markdown file, tracker row, document, and application packet. The marker is per workspace: a different applicant or new workspace needs its own first setup. If present, never rerun setup merely because a source file is missing; use [SetupChecker](../setup-checker/SKILL.md) to find gaps and repair only the affected workspace files as appropriate.
 
 Route the active request:
 
