@@ -139,4 +139,4 @@ def render(name: str, width: int, height: int, positions: list[tuple[int, int]],
 
 
 render('workflow-diagram', WIDTH, HEIGHT, wide_positions, wide_arrows)
-render('workflow-diagram-compact', 815, 5480, compact_positions, compact_arrows)
+render('workflow-diagram-portrait', 815, 5480, compact_positions, compact_arrows)

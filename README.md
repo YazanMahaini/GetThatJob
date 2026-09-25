@@ -10,7 +10,7 @@ GetThatJob is a Codex plugin for setting up a private job-search workspace, chec
 
 <a href="docs/workflow-diagram.png">
   <picture>
-    <source media="(max-width: 800px)" srcset="docs/workflow-diagram-compact.png">
+    <source media="(max-width: 800px)" srcset="docs/workflow-diagram-portrait.png">
     <img src="docs/workflow-diagram.png" alt="GetThatJob workflow from setup through finding jobs, preparing and confirming applications, tracking outcomes, and reusing verified answers">
   </picture>
 </a>
