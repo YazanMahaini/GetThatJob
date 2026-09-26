@@ -131,7 +131,7 @@ GetThatJob routes these to EmailConfirmationChecker. It identifies the applicati
 
 ## Tips
 
-- Put a comprehensive **master CV** containing all your experience in `CVs/`, or add **all your approved CV versions** there. GetThatJob reads each one and records its supported information in your private workspace, whether you supply one CV or several. If two versions disagree, it flags the difference for you instead of guessing.
+- Put a comprehensive **master CV** containing all your experience in `CVs/`, or add **all your approved CV versions** there. GetThatJob reads every version for supported information. If the CVs have different **design styles**, it asks you which of **your CVs** should set the look of tailored CVs rather than guessing. If factual details conflict, it flags those separately for you to resolve.
 - **Recommended model:** GetThatJob works best with **GPT-6 Sol** at **Extra High** reasoning (`xhigh`). Select these settings in Codex for results closest to the workflow documented here.
 
 ## Application flow
