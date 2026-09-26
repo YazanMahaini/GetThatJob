@@ -64,7 +64,10 @@ This is the recommended setup used to test GetThatJob:
 2. Create a new ChatGPT Work project using that folder as its project directory. Open the new project and confirm you are chatting **inside it**.
 3. In that project's chat, send this prompt. ChatGPT Work handles the installation and guides you through any access step your account requires.
 
-> Install the following plugin: [https://github.com/YazanMahaini/GetThatJob](https://github.com/YazanMahaini/GetThatJob)
+```text
+Install the following plugin:
+https://github.com/YazanMahaini/GetThatJob
+```
 
 ### Codex
 
