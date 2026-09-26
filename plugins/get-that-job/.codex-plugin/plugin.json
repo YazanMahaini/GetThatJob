@@ -1,6 +1,6 @@
 {
   "name": "get-that-job",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Set up and run an evidence-led job search and application workspace using each user's own documents.",
   "author": {
     "name": "GetThatJob"

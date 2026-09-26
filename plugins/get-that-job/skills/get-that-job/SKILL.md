@@ -13,6 +13,8 @@ SetupSkill asks for the applicant's confirmation email plugin `@` mention during
 
 SetupSkill also asks once whether to stop at a checked draft or submit complete applications automatically. Read the standing `Submission mode` in `OPERATIONS.md` on every run; a missing mode in an older workspace means `stop-and-wait`. Do not ask again on resumption. Update the mode only when the applicant explicitly changes it. The active instruction for a specific application can override the standing mode for that application.
 
+When multiple approved CVs have different designs, ProfileIntake asks the applicant to choose one of their own CVs as the visual reference and records it in `CV_INDEX.md`. Ask during initial setup if those CVs are already present, or when they are later added. The reference controls styling only; index and use supported facts from every approved CV.
+
 Route the active request:
 
 - New or changed CVs, cover letters, certificates, or profile facts: [SetupChecker](../setup-checker/SKILL.md), then [ProfileIntake](../profile-intake/SKILL.md).

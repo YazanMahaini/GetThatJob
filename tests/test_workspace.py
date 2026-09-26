@@ -107,6 +107,8 @@ class WorkspaceTests(unittest.TestCase):
             workspace = Path(directory)
             setup(workspace)
             operations = workspace / "OPERATIONS.md"
+            cv_index = workspace / "CV_INDEX.md"
+            self.assertIn("Chosen CV design reference (filename in `CVs/`): Not selected", cv_index.read_text(encoding="utf-8"))
             template = operations.read_text(encoding="utf-8")
             self.assertIn("## Confirmation email plugin", template)
             self.assertIn("Selected Codex email plugin:", template)
@@ -121,9 +123,15 @@ class WorkspaceTests(unittest.TestCase):
                 "- Submission mode: `automatic-submit`\n"
             )
             operations.write_text(chosen, encoding="utf-8")
+            chosen_design = cv_index.read_text(encoding="utf-8").replace(
+                "Chosen CV design reference (filename in `CVs/`): Not selected",
+                "Chosen CV design reference (filename in `CVs/`): Synthetic CV B.docx",
+            )
+            cv_index.write_text(chosen_design, encoding="utf-8")
             self.assertEqual(setup(workspace)["status"], "already-initialized")
             setup(workspace, repair=True)
             self.assertEqual(operations.read_text(encoding="utf-8"), chosen)
+            self.assertEqual(cv_index.read_text(encoding="utf-8"), chosen_design)
 
     def test_tracker_matches_marketplace_and_reference_schema(self) -> None:
         with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:
