@@ -14,7 +14,8 @@ REQUIRED_DIRS = ("applications", "CoverLetters", "CoverLetters/Template", "CVs",
 REQUIRED_FILES = (
     "AGENTS.md", "MEMORY.md", "APPLICATION_PROFILE.md", "CV_INDEX.md", "QUALIFICATIONS_INDEX.md",
     "TARGET_ROLES.md", "OPERATIONS.md", "SEARCH_LOG.md", "APPLICATIONS.csv",
-    "applications/README.md", "CoverLetters/README.md", "CoverLetters/Template/README.md", "CVs/README.md",
+    "applications/README.md", "CoverLetters/README.md", "CoverLetters/Template/README.md",
+    "CoverLetters/Template/GetThatJob_Default_Cover_Letter_Style.docx", "CVs/README.md",
     "Qualifications&Certificates/README.md", ".getthatjob/setup.json",
 )
 TRACKER_FIELDS = (
@@ -25,6 +26,7 @@ TRACKER_FIELDS = (
     "date_submitted", "confirmation", "follow_up", "notes",
 )
 DOCUMENT_SUFFIXES = {".docx", ".doc", ".pdf", ".odt", ".rtf", ".txt", ".md"}
+DEFAULT_LETTER = "GetThatJob_Default_Cover_Letter_Style.docx"
 
 
 def source_documents(folder: Path) -> list[Path]:
@@ -58,6 +60,18 @@ def check_document(file: Path) -> str | None:
 
 def check(workspace: Path) -> dict[str, object]:
     workspace = workspace.expanduser().resolve()
+    marker_path = workspace / ".getthatjob" / "setup.json"
+    if marker_path.is_file():
+        try:
+            marker = json.loads(marker_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            marker = {}
+        if marker.get("intake_gate") == "awaiting-documents":
+            return {
+                "status": "awaiting-documents", "workspace": str(workspace),
+                "message": "Pause before checking CVs. Invite the applicant to add files, then wait for an explicit continue or skip.",
+                "folders": ["CVs/", "Qualifications&Certificates/", "CoverLetters/Template/"],
+            }
     repair: list[str] = []
     input_needed: list[str] = []
     notes: list[str] = []
@@ -123,13 +137,15 @@ def check(workspace: Path) -> dict[str, object]:
             input_needed.append("Record the applicant's preferred name and source in MEMORY.md.")
 
     cover_files = source_documents(workspace / "CoverLetters")
-    if not cover_files:
-        notes.append("No cover-letter example added; use the applicant's CV and employer instructions for layout.")
-    else:
-        for file in cover_files:
-            problem = check_document(file)
-            if problem:
-                repair.append(f"CoverLetters/{file.relative_to(workspace / 'CoverLetters').as_posix()} {problem}")
+    custom_cover_files = [file for file in cover_files
+                          if file.relative_to(workspace / "CoverLetters").as_posix()
+                          != f"Template/{DEFAULT_LETTER}"]
+    if not custom_cover_files:
+        notes.append("Use the bundled generic cover-letter design unless the applicant chooses their own letter reference.")
+    for file in cover_files:
+        problem = check_document(file)
+        if problem:
+            repair.append(f"CoverLetters/{file.relative_to(workspace / 'CoverLetters').as_posix()} {problem}")
 
     status = "repair-needed" if repair else "needs-input" if input_needed else "ready"
     return {
@@ -137,7 +153,8 @@ def check(workspace: Path) -> dict[str, object]:
         "workspace": str(workspace),
         "cv_count": len(valid_cvs),
         "credential_count": len(credential_files),
-        "cover_letter_source_count": len(cover_files),
+        "cover_letter_source_count": len(custom_cover_files),
+        "default_cover_letter_template": (workspace / "CoverLetters" / "Template" / DEFAULT_LETTER).is_file(),
         "repair": repair,
         "input_needed": input_needed,
         "notes": notes,
@@ -150,7 +167,8 @@ def main() -> None:
     args = parser.parse_args()
     result = check(args.workspace)
     print(json.dumps(result, indent=2))
-    raise SystemExit({"ready": 0, "repair-needed": 1, "needs-input": 2}[str(result["status"])])
+    raise SystemExit({"ready": 0, "repair-needed": 1, "needs-input": 2,
+                      "awaiting-documents": 2}[str(result["status"])])
 
 
 if __name__ == "__main__":

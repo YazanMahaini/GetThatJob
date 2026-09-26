@@ -15,7 +15,7 @@ PLUGIN = ROOT / "plugins" / "get-that-job"
 sys.path.insert(0, str(PLUGIN / "scripts"))
 
 from check_workspace import TRACKER_FIELDS, check  # noqa: E402
-from setup_workspace import setup  # noqa: E402
+from setup_workspace import acknowledge_documents, setup  # noqa: E402
 
 
 class WorkspaceTests(unittest.TestCase):
@@ -78,6 +78,8 @@ class WorkspaceTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:
             workspace = Path(directory)
             setup(workspace)
+            self.assertEqual(check(workspace)["status"], "awaiting-documents")
+            acknowledge_documents(workspace)
             empty = check(workspace)
             self.assertEqual(empty["status"], "needs-input")
             self.assertEqual(empty["repair"], [])
@@ -101,6 +103,28 @@ class WorkspaceTests(unittest.TestCase):
             damaged = check(workspace)
             self.assertEqual(damaged["status"], "repair-needed")
             self.assertTrue(any("Broken.docx" in item for item in damaged["repair"]))
+
+    def test_first_use_handoff_persists_until_explicit_release(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:
+            workspace = Path(directory)
+            setup(workspace)
+            marker = workspace / ".getthatjob" / "setup.json"
+            cv = workspace / "CVs" / "Approved CV.txt"
+            cv.write_text("Synthetic applicant", encoding="utf-8")
+            self.assertEqual(json.loads(marker.read_text(encoding="utf-8"))["intake_gate"], "awaiting-documents")
+            pending = check(workspace)
+            self.assertEqual(pending["status"], "awaiting-documents")
+            self.assertNotIn("cv_count", pending)
+            self.assertEqual(setup(workspace)["status"], "already-initialized")
+            self.assertEqual(check(workspace)["status"], "awaiting-documents")
+            self.assertEqual(acknowledge_documents(workspace)["status"], "documents-acknowledged")
+            self.assertEqual(json.loads(marker.read_text(encoding="utf-8"))["intake_gate"], "released")
+            self.assertEqual(check(workspace)["cv_count"], 1)
+            self.assertEqual(acknowledge_documents(workspace)["status"], "no-pending-handoff")
+            default = workspace / "CoverLetters" / "Template" / "GetThatJob_Default_Cover_Letter_Style.docx"
+            self.assertTrue(default.is_file())
+            self.assertTrue(check(workspace)["default_cover_letter_template"])
+            self.assertEqual(check(workspace)["cover_letter_source_count"], 0)
 
     def test_workspace_choices_survive_repeat_setup_and_repair(self) -> None:
         with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:
@@ -132,6 +156,16 @@ class WorkspaceTests(unittest.TestCase):
             setup(workspace, repair=True)
             self.assertEqual(operations.read_text(encoding="utf-8"), chosen)
             self.assertEqual(cv_index.read_text(encoding="utf-8"), chosen_design)
+
+    def test_older_marker_does_not_start_a_new_document_handoff(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:
+            workspace = Path(directory)
+            setup(workspace)
+            marker_path = workspace / ".getthatjob" / "setup.json"
+            marker = json.loads(marker_path.read_text(encoding="utf-8"))
+            marker.pop("intake_gate")
+            marker_path.write_text(json.dumps(marker), encoding="utf-8")
+            self.assertNotEqual(check(workspace)["status"], "awaiting-documents")
 
     def test_tracker_matches_marketplace_and_reference_schema(self) -> None:
         with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:

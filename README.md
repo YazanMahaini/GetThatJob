@@ -1,10 +1,10 @@
 # GetThatJob
 
 <p align="center">
-  <img src="plugins/get-that-job/assets/brand/get-that-job-logo.png" alt="GetThatJob logo: GTJ and Get That Job! inside a blue flowchart box on a dark square" width="160">
+  <img src="plugins/get-that-job/assets/brand/get-that-job-logo.svg" alt="Get That Job! inside a blue flowchart box on a dark square" width="160">
 </p>
 
-GetThatJob is a Codex plugin for setting up a private job-search workspace, checking applicant documents, finding and assessing roles, preparing applications, building a reusable application profile, and recording verified outcomes. It carries the **workflow**, not an applicant's personal information or document design.
+GetThatJob is a Codex plugin for setting up a private job-search workspace, checking applicant documents, finding and assessing roles, preparing applications, building a reusable application profile, and recording verified outcomes. It carries the **workflow** and a generic cover-letter design, never an applicant's personal information or CV design.
 
 ## How GetThatJob works
 
@@ -15,7 +15,7 @@ flowchart LR
     subgraph setup["01  SET UP"]
         direction TB
         A("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Ask GetThatJob for help</div>") --> B("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>First use here?</div>")
-        B --> C("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Yes: SetupSkill adds missing files and saves choices</div>")
+        B --> C("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Yes: create folders, then pause for your documents</div>")
         B --> D("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>SetupChecker checks sources</div>")
         C --> D
     end
@@ -85,9 +85,9 @@ Use @GetThatJob and find me jobs.
 
 That request starts or resumes the pipeline. GetThatJob handles these tasks in sequence:
 
-1. **Set up and check the workspace.** On first use in that workspace, it creates only missing folders and blank records. It preserves existing files, checks available CVs and credentials, asks once for your email plugin and submission preference, and identifies any missing search priorities. If your CVs have different designs, it asks which of your own CVs should set the style.
+1. **Set up and check the workspace.** On first use in that workspace, it asks once for your email plugin and submission preference, then creates only missing folders and blank records. It **pauses so you can add your CVs and other documents**. When you say to continue, it checks the available sources and identifies missing search priorities. If your CVs have different designs, it asks which of your own CVs should set the style. Existing workspaces keep their files and resume without a new first-use pause.
 2. **Find and assess jobs.** It searches LinkedIn Jobs and employer sites, checks live requirements, eligibility, and duplicates, and records why a role fits or fails. If LinkedIn needs sign-in, it asks you to use LinkedIn's official flow while it continues employer-site research.
-3. **Prepare strong applications.** For a strong eligible role, it uses verified information from your approved CVs and follows your chosen CV design, creates a tailored CV, cover letter, and application packet, and fills and checks a portal draft when accessible.
+3. **Prepare strong applications.** For a strong eligible role, it uses verified information from your approved CVs and follows your chosen CV design, creates a tailored CV, cover letter, and application packet, and fills and checks a portal draft when accessible. The letter uses the bundled generic design unless you choose your own approved letter as its reference.
 4. **Build your reusable profile.** After each filled and checked draft, ProfileBuilder saves newly verified reusable answers in your private `APPLICATION_PROFILE.md`. Later applications check that file before asking you the same question again.
 5. **Follow your saved submission choice.** By default, Codex gives you the checked draft and stops so you can click Apply yourself or tell it to submit that application. If you chose automatic submission, it rechecks and submits a complete application without asking again, unless a required fact, signature, or other blocker needs you.
 
@@ -97,7 +97,9 @@ Point GetThatJob to the existing job-search folder. It previews additions with `
 
 ## Add your own sources
 
-Place at least one current, approved CV in `CVs/`. Add official credentials to `Qualifications&Certificates/` as relevant, and optionally put an approved letter example in `CoverLetters/Template/`. ProfileIntake records the applicant's facts, preferred roles, eligibility and source documents in that workspace. After each checked application draft, ProfileBuilder merges newly verified reusable form answers into the private `APPLICATION_PROFILE.md`, preserving earlier entries and their source and reuse scope. It can also capture verified answers from an application filled outside JobFinder when that application is reviewed. Later forms check the accumulated profile before asking the applicant again. A CV from this applicant controls tailored CV styling; this repository contains no CV or cover-letter style template.
+On first setup, GetThatJob creates the folders and **waits** while you add your files. Put at least one current, approved CV in `CVs/` and relevant official credentials in `Qualifications&Certificates/`. A generic cover-letter design is already in `CoverLetters/Template/`. If you prefer the look of your own letter, add an approved reference there and tell GetThatJob to use it. Then reply in the same chat: `I've added my documents. Continue.` You can also explicitly ask it to continue without adding files; it will report what is missing. This handoff is remembered if you leave and return later.
+
+ProfileIntake records the applicant's facts, preferred roles, eligibility and source documents in that workspace. After each checked application draft, ProfileBuilder merges newly verified reusable form answers into the private `APPLICATION_PROFILE.md`, preserving earlier entries and their source and reuse scope. It can also capture verified answers from an application filled outside JobFinder when that application is reviewed. Later forms check the accumulated profile before asking the applicant again. A CV from this applicant controls tailored CV styling; the bundled letter design contains only placeholders.
 
 ## When Codex needs you
 
@@ -138,7 +140,7 @@ Every applicant has different qualifications, preferences, accounts and live opp
 
 ## Privacy
 
-Only generic templates, skills and helper scripts are distributed. Keep real CVs, credentials, the populated `APPLICATION_PROFILE.md`, application packets and access details in a separate applicant workspace. The repository's `.gitignore` blocks common accidental additions at the repository root. Review every commit before publishing.
+Only generic templates, including the optional default cover-letter design, skills and helper scripts are distributed. Keep real CVs, credentials, the populated `APPLICATION_PROFILE.md`, application packets and access details in a separate applicant workspace. The repository's `.gitignore` blocks common accidental additions at the repository root. Review every commit before publishing.
 
 ## Development checks
 

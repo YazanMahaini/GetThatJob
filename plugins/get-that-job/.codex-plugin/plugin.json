@@ -1,6 +1,6 @@
 {
   "name": "get-that-job",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Set up and run an evidence-led job search and application workspace using each user's own documents.",
   "author": {
     "name": "GetThatJob"
@@ -14,8 +14,8 @@
     "developerName": "GetThatJob",
     "category": "Productivity",
     "brandColor": "#5C9FDE",
-    "composerIcon": "./assets/brand/get-that-job-logo.png",
-    "logo": "./assets/brand/get-that-job-logo.png",
+    "composerIcon": "./assets/brand/get-that-job-logo.svg",
+    "logo": "./assets/brand/get-that-job-logo.svg",
     "capabilities": [
       "Write"
     ],
