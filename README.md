@@ -8,28 +8,51 @@ GetThatJob is a Codex plugin for setting up a private job-search workspace, chec
 
 ## How GetThatJob works
 
-Read the top row from left to right, then the bottom row from right to left.
+Read the four numbered panels from left to right. Each box has the same size; the paths inside the panels show the key decisions.
 
 ```mermaid
-%%{init: {"flowchart": {"rankSpacing": 10, "nodeSpacing": 20}}}%%
-flowchart TB
-    subgraph first[" "]
-        direction LR
-        A("01 SET UP<br/>Create files<br/>Check sources<br/>Keep existing") --> B("02 SOURCES<br/>Add CVs<br/>Add records<br/>Verify facts") --> C("03 FIND JOBS<br/>Find roles<br/>Check fit<br/>Check criteria") --> D("04 PREPARE<br/>Tailor CV<br/>Fill draft<br/>Save answers")
+flowchart LR
+    subgraph setup["01  SET UP"]
+        direction TB
+        A("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Ask GetThatJob for help</div>") --> B("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>First use here?</div>")
+        B --> C("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Yes: SetupSkill adds only missing files</div>")
+        B --> D("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>SetupChecker checks sources</div>")
+        C --> D
     end
-    subgraph second[" "]
-        direction RL
-        E("05 REVIEW<br/>Review draft<br/>Request edits<br/>Choose action") --> F("06 CONFIRM<br/>Check email<br/>Check portal<br/>Verify receipt") --> G("07 TRACK<br/>Track outcome<br/>Save evidence<br/>Follow up") --> H("08 REUSE<br/>Use profile<br/>Recheck facts<br/>Find next role")
+    subgraph search["02  SOURCES & SEARCH"]
+        direction TB
+        E("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>CV and priorities ready?</div>")
+        E --> F("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>No: add documents or answer questions</div>")
+        F --> G("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>ProfileIntake verifies facts and CV style</div>")
+        E --> H("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>JobFinder checks roles and eligibility</div>")
+        G --> H
     end
-    first ~~~ second
-    classDef step fill:#00182f,stroke:#355675,color:#5c9fde,stroke-width:2px,font-size:16px;
-    class A,B,C,D,E,F,G,H step;
-    style first fill:transparent,stroke:transparent
-    style second fill:transparent,stroke:transparent
-    linkStyle 0,1,2,3,4,5 stroke:#6f95b5,stroke-width:2px;
+    subgraph prepare["03  PREPARE & REVIEW"]
+        direction TB
+        I("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Tailor CV, letter and packet</div>") --> J("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Fill and check portal draft</div>")
+        J --> P("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>ProfileBuilder saves verified answers</div>")
+        P --> K("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>You review and request changes</div>")
+    end
+    subgraph outcome["04  SUBMIT & TRACK"]
+        direction TB
+        L("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>You submit, or direct ApplicationFinalize</div>") --> M("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>EmailConfirmationChecker checks receipt</div>")
+        M --> N("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Tracker and packet record outcome</div>")
+        N --> O("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>ApplicationFollowUp checks later status</div>")
+    end
+    setup --> search --> prepare --> outcome
+    classDef step fill:#00182f,stroke:#355675,color:#d9e8f6,stroke-width:2px;
+    classDef decision fill:#111111,stroke:#5c9fde,color:#5c9fde,stroke-width:2px,stroke-dasharray:5 4;
+    class A,C,D,F,G,H,I,J,P,K,L,M,N,O step;
+    class B,E decision;
+    style setup fill:transparent,stroke:#355675,color:#5c9fde
+    style search fill:transparent,stroke:#355675,color:#5c9fde
+    style prepare fill:transparent,stroke:#355675,color:#5c9fde
+    style outcome fill:transparent,stroke:#355675,color:#5c9fde
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13 stroke:#6f95b5,stroke-width:2px;
+    linkStyle 14,15,16 stroke:transparent,fill:transparent;
 ```
 
-The [detailed interactive workflow](WORKFLOW.md) shows the main decisions and stages, with notes on alternate routes and repeat steps. It also offers full-resolution [horizontal](docs/workflow-detailed-horizontal.png) and [vertical](docs/workflow-detailed-vertical.png) PNGs.
+The [workflow page](WORKFLOW.md) explains alternate routes and repeat steps. It also offers full-resolution [horizontal](docs/workflow-detailed-horizontal.png) and [vertical](docs/workflow-detailed-vertical.png) PNGs.
 
 ## Install in Codex
 

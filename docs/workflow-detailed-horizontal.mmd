@@ -1,30 +1,30 @@
 flowchart LR
     subgraph setup["01  SET UP"]
         direction TB
-        A("Ask GetThatJob for help") --> B("First use here?")
-        B --> C("Yes: SetupSkill adds only missing files")
-        B --> D("SetupChecker checks sources")
+        A("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Ask GetThatJob for help</div>") --> B("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>First use here?</div>")
+        B --> C("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Yes: SetupSkill adds only missing files</div>")
+        B --> D("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>SetupChecker checks sources</div>")
         C --> D
     end
     subgraph search["02  SOURCES & SEARCH"]
         direction TB
-        E("CV and priorities ready?")
-        E --> F("No: add documents or answer questions")
-        F --> G("ProfileIntake verifies facts and CV style")
-        E --> H("JobFinder checks roles and eligibility")
+        E("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>CV and priorities ready?</div>")
+        E --> F("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>No: add documents or answer questions</div>")
+        F --> G("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>ProfileIntake verifies facts and CV style</div>")
+        E --> H("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>JobFinder checks roles and eligibility</div>")
         G --> H
     end
     subgraph prepare["03  PREPARE & REVIEW"]
         direction TB
-        I("Tailor CV, letter and packet") --> J("Fill and check portal draft")
-        J --> P("ProfileBuilder saves verified answers")
-        P --> K("You review and request changes")
+        I("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Tailor CV, letter and packet</div>") --> J("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Fill and check portal draft</div>")
+        J --> P("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>ProfileBuilder saves verified answers</div>")
+        P --> K("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>You review and request changes</div>")
     end
     subgraph outcome["04  SUBMIT & TRACK"]
         direction TB
-        L("You submit, or direct ApplicationFinalize") --> M("EmailConfirmationChecker checks receipt")
-        M --> N("Tracker and packet record outcome")
-        N --> O("ApplicationFollowUp checks later status")
+        L("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>You submit, or direct ApplicationFinalize</div>") --> M("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>EmailConfirmationChecker checks receipt</div>")
+        M --> N("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Tracker and packet record outcome</div>")
+        N --> O("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>ApplicationFollowUp checks later status</div>")
     end
     setup --> search --> prepare --> outcome
     classDef step fill:#00182f,stroke:#355675,color:#d9e8f6,stroke-width:2px;
