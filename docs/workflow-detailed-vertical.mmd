@@ -32,8 +32,8 @@ flowchart TB
         N --> O("ApplicationFollowUp checks later status")
     end
     end
-    setup ~~~ search
-    prepare ~~~ outcome
+    setup --> search
+    prepare --> outcome
     first ~~~ second
     classDef step fill:#00182f,stroke:#355675,color:#d9e8f6,stroke-width:2px;
     classDef decision fill:#111111,stroke:#5c9fde,color:#5c9fde,stroke-width:2px,stroke-dasharray:5 4;
@@ -44,5 +44,6 @@ flowchart TB
     style prepare fill:transparent,stroke:#355675,color:#5c9fde
     style outcome fill:transparent,stroke:#355675,color:#5c9fde
     linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13 stroke:#6f95b5,stroke-width:2px;
+    linkStyle 14,15,16 stroke:transparent,fill:transparent;
     style first fill:transparent,stroke:transparent
     style second fill:transparent,stroke:transparent

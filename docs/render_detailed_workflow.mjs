@@ -22,8 +22,8 @@ const vertical = horizontal
   .replace('    subgraph setup', '    subgraph first[" "]\n        direction LR\n    subgraph setup')
   .replace('    subgraph prepare', '    end\n    subgraph second[" "]\n        direction LR\n    subgraph prepare')
   .replace(
-    '    setup ~~~ search ~~~ prepare ~~~ outcome',
-    '    end\n    setup ~~~ search\n    prepare ~~~ outcome\n    first ~~~ second',
+    '    setup --> search --> prepare --> outcome',
+    '    end\n    setup --> search\n    prepare --> outcome\n    first ~~~ second',
   ) +
   '    style first fill:transparent,stroke:transparent\n' +
   '    style second fill:transparent,stroke:transparent\n';

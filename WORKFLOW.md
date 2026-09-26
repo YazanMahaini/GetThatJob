@@ -33,7 +33,7 @@ flowchart LR
         M --> N("Tracker and packet record outcome")
         N --> O("ApplicationFollowUp checks later status")
     end
-    setup ~~~ search ~~~ prepare ~~~ outcome
+    setup --> search --> prepare --> outcome
     classDef step fill:#00182f,stroke:#355675,color:#d9e8f6,stroke-width:2px;
     classDef decision fill:#111111,stroke:#5c9fde,color:#5c9fde,stroke-width:2px,stroke-dasharray:5 4;
     class A,C,D,F,G,H,I,J,P,K,L,M,N,O step;
@@ -43,6 +43,7 @@ flowchart LR
     style prepare fill:transparent,stroke:#355675,color:#5c9fde
     style outcome fill:transparent,stroke:#355675,color:#5c9fde
     linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13 stroke:#6f95b5,stroke-width:2px;
+    linkStyle 14,15,16 stroke:transparent,fill:transparent;
 ```
 
 If LinkedIn is signed out, the applicant signs in through LinkedIn's official flow while other research can continue. After missing sources are added, SetupChecker runs again. Revisions return to the application packet. ProfileBuilder also accepts verified answers from a checked application filled outside JobFinder. Each later application reads the growing private profile and rechecks role-specific facts. Follow-up updates the same tracker and packet.
