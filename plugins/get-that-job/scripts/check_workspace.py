@@ -27,6 +27,14 @@ TRACKER_FIELDS = (
 )
 DOCUMENT_SUFFIXES = {".docx", ".doc", ".pdf", ".odt", ".rtf", ".txt", ".md"}
 DEFAULT_LETTER = "GetThatJob_Default_Cover_Letter_Style.docx"
+STARTING_SEARCH_CHOICES = {
+    "Pay rule": "Choose paid-only or allow unpaid opportunities; an available stipend counts as paid.",
+    "Employment types": "Choose full-time, part-time, internship, and/or contract work.",
+    "Current country of residence": "Record the applicant's current country of residence.",
+    "Search geography and order": "Choose current-country, remote, and/or other-country search scope and order.",
+    "Mobility and authorization limits": "Record relocation, travel, and sponsorship limits, or say none.",
+    "Minimum compensation": "Record a minimum amount with currency and period, or say no minimum.",
+}
 
 
 def source_documents(folder: Path) -> list[Path]:
@@ -130,6 +138,13 @@ def check(workspace: Path) -> dict[str, object]:
         if not any(line.startswith("| ") and "[Ask" not in line and "---" not in line
                    and "Priority" not in line for line in content.splitlines()):
             input_needed.append("Record at least one confirmed target role in TARGET_ROLES.md.")
+        if "## Starting search choices" in content:
+            choices_section = content.split("## Starting search choices", 1)[1].split("\n## ", 1)[0]
+            choice_lines = choices_section.splitlines()
+            for label, question in STARTING_SEARCH_CHOICES.items():
+                line = next((item for item in choice_lines if item.startswith(f"- {label}:")), None)
+                if line is None or "[Ask" in line or not line.partition(":")[2].strip():
+                    input_needed.append(question)
     memory = workspace / "MEMORY.md"
     if memory.is_file():
         content = memory.read_text(encoding="utf-8", errors="replace")

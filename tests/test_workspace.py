@@ -97,6 +97,27 @@ class WorkspaceTests(unittest.TestCase):
             )
             with (workspace / "TARGET_ROLES.md").open("a", encoding="utf-8") as stream:
                 stream.write("\n| 1 | Project Coordinator | Local | Paid | Example CV.txt |\n")
+            missing_choices = check(workspace)
+            self.assertEqual(missing_choices["status"], "needs-input")
+            self.assertTrue(any("stipend" in item for item in missing_choices["input_needed"]))
+            targets = workspace / "TARGET_ROLES.md"
+            answers = {
+                "Pay rule": "Paid only; available stipends count as paid",
+                "Employment types": "Full-time, part-time, internships, and contracts",
+                "Current country of residence": "Exampleland (applicant statement)",
+                "Search geography and order": "Exampleland first, then remote roles based there",
+                "Mobility and authorization limits": "No relocation; verify each posting",
+                "Minimum compensation": "No minimum",
+            }
+            lines = targets.read_text(encoding="utf-8").splitlines()
+            updated = []
+            for line in lines:
+                if line.startswith("- ") and ":" in line:
+                    label = line[2:].split(":", 1)[0]
+                    if label in answers:
+                        line = f"- {label}: {answers[label]}"
+                updated.append(line)
+            targets.write_text("\n".join(updated) + "\n", encoding="utf-8")
             self.assertEqual(check(workspace)["status"], "ready")
 
             (workspace / "CVs" / "Broken.docx").write_text("not a Word document", encoding="utf-8")

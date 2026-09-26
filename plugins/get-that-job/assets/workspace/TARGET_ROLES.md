@@ -12,12 +12,21 @@ Record every role or field the user explicitly wants, alongside confirmed sugges
 | Priority | Roles and close variants | Locations or remote scope | Required compensation | Evidence for fit |
 | --- | --- | --- | --- | --- |
 
+## Starting search choices
+
+Record the user's answers after the first document handoff. Keep existing answers on later runs; ask again only for an unanswered choice or when the user changes it. A stipend counts as paid work when this applicant is eligible to receive it, unless they set a higher minimum or exclude stipend roles.
+
+- Pay rule: [Ask: paid opportunities only, or are unpaid opportunities acceptable?]
+- Employment types: [Ask: full-time, part-time, internships, fixed-term or contract; select all that apply]
+- Current country of residence: [Ask or record from a verified applicant source; distinguish residence from nationality]
+- Search geography and order: [Ask: current country, remote work based there, and/or other countries; name preferred countries and order]
+- Mobility and authorization limits: [Ask: relocation, travel, sponsorship, or other limits; verify each posting]
+- Minimum compensation: [Ask for an amount or record no minimum; retain currency and period]
+
 ## Exclusions and constraints
 
 - Roles or sectors to avoid: [Ask]
-- Seniority and employment types: [Ask]
-- Work authorization, sponsorship, and travel limits: [Ask; verify each posting]
-- Minimum pay or paid-only rule: [Ask]
+- Seniority to include or avoid: [Ask]
 
 ## Search sources
 
