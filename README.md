@@ -52,8 +52,6 @@ flowchart LR
     linkStyle 14,15,16 stroke:transparent,fill:transparent;
 ```
 
-The [workflow page](WORKFLOW.md) explains alternate routes and repeat steps. It also offers full-resolution [horizontal](docs/workflow-detailed-horizontal.png) and [vertical](docs/workflow-detailed-vertical.png) PNGs.
-
 ## Install in Codex
 
 From this public repository, copy its GitHub URL and run:
