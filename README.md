@@ -54,10 +54,10 @@ flowchart LR
 
 ## Install in Codex
 
-From this public repository, copy its GitHub URL and run:
+Install the plugin from this repository:
 
 ```text
-codex plugin marketplace add <repository-url>
+codex plugin marketplace add https://github.com/YazanMahaini/GetThatJob
 codex plugin add get-that-job@get-that-job
 ```
 
