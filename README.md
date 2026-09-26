@@ -1,7 +1,7 @@
 # GetThatJob
 
 <p align="center">
-  <img src="plugins/get-that-job/assets/brand/get-that-job-logo.svg" alt="Get That Job! inside a blue flowchart box on a dark square" width="160">
+  <img src="plugins/get-that-job/assets/brand/get-that-job-logo-compact.svg" alt="Get That Job! inside a blue flowchart box on a dark square" width="160">
 </p>
 
 GetThatJob is a Codex plugin for setting up a private job-search workspace, checking applicant documents, finding and assessing roles, preparing applications, building a reusable application profile, and recording verified outcomes. It carries the **workflow** and a generic cover-letter design, never an applicant's personal information or CV design.
@@ -64,9 +64,7 @@ This is the recommended setup used to test GetThatJob:
 2. Create a new ChatGPT Work project using that folder as its project directory. Open the new project and confirm you are chatting **inside it**.
 3. In that project's chat, send this prompt. ChatGPT Work handles the installation and guides you through any access step your account requires.
 
-```text
-Install the following plugin: [https://github.com/YazanMahaini/GetThatJob](https://github.com/YazanMahaini/GetThatJob)
-```
+> Install the following plugin: [https://github.com/YazanMahaini/GetThatJob](https://github.com/YazanMahaini/GetThatJob)
 
 ### Codex
 
