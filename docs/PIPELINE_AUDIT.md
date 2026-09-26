@@ -13,7 +13,7 @@ This checklist maps the reusable plugin to the reference job-search workflow. Ap
 | Portal draft | Fill all supported fields from verified sources, save, reopen or inspect persistence, and record questions and blockers. A search request authorizes reversible draft preparation. |
 | Reusable profile | After each checked draft, promote newly verified non-CV form answers to the private `APPLICATION_PROFILE.md` with source, confirmation date, and reuse scope. Read it before the next form and recheck context-specific answers. |
 | Review and submission | Hand off a checked draft for review. Final submission requires the user's applicable instruction. An e-signature or equivalent signing field requires separate authorization for that specific application. |
-| Confirmation | Search the configured mailbox narrowly and read-only for a matching receipt; capture sender, subject, timestamp, link, and evidence. Update the packet and tracker only when the evidence supports the stage. |
+| Confirmation | On first setup, ask once for the applicant's email plugin `@` mention and save that plugin selection privately. Later checks use the selected plugin for a narrow, read-only receipt search; capture sender, subject, timestamp, link, and evidence. Update the packet and tracker only when the evidence supports the stage. |
 | Later status | On request, check recruiter and portal updates, record interviews or deadlines, and preserve original submission evidence. |
 
 ## Release checks

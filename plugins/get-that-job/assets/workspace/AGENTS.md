@@ -17,3 +17,5 @@ Follow the style of the user's selected source CV. There is no plugin CV or cove
 Search and draft preparation may proceed from a search request. Never submit or sign an application without the user's applicable authorization. Permission to submit does not include permission to fill an e-signature or certification-signature field. Verify the exact live destination, answers, files, fees, and duplicate status before any authorized submission. Record confirmation evidence rather than assuming a click succeeded.
 
 Keep application-specific facts in `APPLICATIONS.csv` and the matching packet. Use `MEMORY.md` for durable narrative context and `APPLICATION_PROFILE.md` for verified, reusable form answers. Check the latter before asking the applicant to repeat a known answer; respect its source, scope, and recheck rule.
+
+Use the Codex email plugin recorded in `OPERATIONS.md` for read-only receipt checks. Ask for its `@` mention only during this workspace's first setup. On later visits, reuse the recorded plugin; change it only when the applicant asks. Never store mailbox credentials in workspace files.

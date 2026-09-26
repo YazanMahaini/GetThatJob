@@ -9,6 +9,8 @@ Use this as the plugin's entry point. Resolve the applicant workspace from the u
 
 Before other plugin work, inspect `.getthatjob/setup.json` in that workspace. If absent, use [SetupSkill](../setup-skill/SKILL.md) once. For an established applicant workspace, preview additions first and preserve every existing folder, Markdown file, tracker row, document, and application packet. The marker is per workspace: a different applicant or new workspace needs its own first setup. If present, never rerun setup merely because a source file is missing; use [SetupChecker](../setup-checker/SKILL.md) to find gaps and repair only the affected workspace files as appropriate.
 
+SetupSkill asks for the applicant's confirmation email plugin `@` mention during first setup and records the selected plugin in that workspace's `OPERATIONS.md`. On resumption, read that choice and do not ask again. Use the selected plugin for later read-only confirmation checks; if unavailable, report that limitation without changing plugins silently.
+
 Route the active request:
 
 - New or changed CVs, cover letters, certificates, or profile facts: [SetupChecker](../setup-checker/SKILL.md), then [ProfileIntake](../profile-intake/SKILL.md).

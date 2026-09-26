@@ -26,6 +26,10 @@ class WorkspaceTests(unittest.TestCase):
             instructions.write_text("Applicant-owned instructions\n", encoding="utf-8")
             tracker = workspace / "APPLICATIONS.csv"
             tracker.write_bytes(b"Applicant-owned tracker\r\n")
+            operations = workspace / "OPERATIONS.md"
+            operations.write_text(
+                "Applicant-owned workflow\nEmail confirmation uses Outlook.\n", encoding="utf-8"
+            )
             (workspace / "CVs").mkdir()
             cv = workspace / "CVs" / "Approved CV.docx"
             cv.write_bytes(b"Applicant-owned CV")
@@ -44,6 +48,10 @@ class WorkspaceTests(unittest.TestCase):
             for relative, content in existing.items():
                 self.assertEqual((workspace / relative).read_bytes(), content)
             self.assertEqual(instructions.read_text(encoding="utf-8"), "Applicant-owned instructions\n")
+            self.assertEqual(
+                operations.read_text(encoding="utf-8"),
+                "Applicant-owned workflow\nEmail confirmation uses Outlook.\n",
+            )
             self.assertTrue((workspace / ".getthatjob" / "setup.json").is_file())
             self.assertTrue((workspace / "APPLICATION_PROFILE.md").is_file())
             marker_before = (workspace / ".getthatjob" / "setup.json").read_text(encoding="utf-8")
@@ -90,6 +98,25 @@ class WorkspaceTests(unittest.TestCase):
             damaged = check(workspace)
             self.assertEqual(damaged["status"], "repair-needed")
             self.assertTrue(any("Broken.docx" in item for item in damaged["repair"]))
+
+    def test_email_plugin_choice_survives_repeat_setup_and_repair(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:
+            workspace = Path(directory)
+            setup(workspace)
+            operations = workspace / "OPERATIONS.md"
+            template = operations.read_text(encoding="utf-8")
+            self.assertIn("## Confirmation email plugin", template)
+            self.assertIn("Selected Codex email plugin:", template)
+
+            chosen = (
+                "# Applicant operations\n\n"
+                "## Confirmation email plugin\n\n"
+                "- Selected Codex email plugin: gmail@openai-curated-remote\n"
+            )
+            operations.write_text(chosen, encoding="utf-8")
+            self.assertEqual(setup(workspace)["status"], "already-initialized")
+            setup(workspace, repair=True)
+            self.assertEqual(operations.read_text(encoding="utf-8"), chosen)
 
     def test_tracker_matches_marketplace_and_reference_schema(self) -> None:
         with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:

@@ -63,6 +63,8 @@ codex plugin add get-that-job@get-that-job
 
 Start a new Codex task after installation so the skills are available. Open the task in your job-search workspace, or give its full folder path in your prompt. Type `@GetThatJob` and select the installed plugin from Codex's suggestions. Codex may display the selected mention as `[@GetThatJob](plugin://get-that-job@get-that-job)`.
 
+**Recommended model:** GetThatJob works best with **GPT-6 Sol** at **Extra High** reasoning (`xhigh`). Select these settings in Codex for results closest to the workflow documented here.
+
 The setup helper uses Python 3 when available. The skills also describe a file-tool fallback for systems without Python.
 
 ### Use an existing workspace
@@ -79,7 +81,7 @@ Use @GetThatJob and find me jobs.
 
 That request starts or resumes the pipeline. GetThatJob handles these tasks in sequence:
 
-1. **Set up and check the workspace.** On first use in that workspace, it creates only missing folders and blank records. It preserves existing files, checks available CVs and credentials, and identifies any missing search priorities.
+1. **Set up and check the workspace.** On first use in that workspace, it creates only missing folders and blank records. It preserves existing files, checks available CVs and credentials, asks once for the email plugin's Codex `@` mention, and identifies any missing search priorities.
 2. **Find and assess jobs.** It searches LinkedIn Jobs and employer sites, checks live requirements, eligibility, and duplicates, and records why a role fits or fails. If LinkedIn needs sign-in, it asks you to use LinkedIn's official flow while it continues employer-site research.
 3. **Prepare strong applications.** For a strong eligible role, it follows your approved CV's style, creates a tailored CV, cover letter, and application packet, and fills and checks a portal draft when accessible.
 4. **Build your reusable profile.** After each filled and checked draft, ProfileBuilder saves newly verified reusable answers in your private `APPLICATION_PROFILE.md`. Later applications check that file before asking you the same question again.
@@ -88,6 +90,8 @@ That request starts or resumes the pipeline. GetThatJob handles these tasks in s
 ### When Codex needs you
 
 Codex may ask you to add an approved CV or relevant credential, confirm a search preference or unsupported application answer, sign in to a site, or review a completed draft. It should name the exact missing item and continue independent work where possible. You can reply in the same task; you do not need to restart the pipeline.
+
+At first setup, GetThatJob asks: **“Which email plugin should I use to check application confirmations? Please select it with `@`, such as `@Outlook Email` or `@Gmail`.”** It saves that plugin selection in your private `OPERATIONS.md` and reuses it when you resume; it does not ask again. If the selected plugin is not installed or connected, job search and draft preparation can continue, but Codex will report that it cannot verify an email receipt until access is available. It does not switch to another mailbox without your direction.
 
 After reviewing, tell Codex any revisions you want. If you want it to submit a specific application, say: `Use @GetThatJob to submit my reviewed application for [employer and role].` It rechecks that application before submission. An e-signature or signing declaration requires a separate, explicit instruction for that specific application.
 
@@ -101,7 +105,7 @@ Place at least one current, approved CV in `CVs/`. Add official credentials to `
 
 JobFinder searches LinkedIn Jobs and employer sites, verifies the live posting, checks duplicates and essential requirements, creates a tailored CV and cover letter, and fills a checked draft when accessible. ProfileBuilder then captures newly verified reusable answers. JobFinder stops for applicant review before final submission. ApplicationFinalize handles a separately authorized submission; application signing always requires explicit authorization for that specific application. EmailConfirmationChecker verifies a matching receipt, and ApplicationFollowUp records later stages when asked.
 
-LinkedIn access is checked at use time. If the available LinkedIn app has no job-search tool, the skill uses a signed-in LinkedIn browser session. If signed out, it asks the applicant to sign in through LinkedIn's official flow and continues employer-site research while waiting. Email checking similarly uses the applicant's connected mailbox; it never sends or changes messages.
+LinkedIn access is checked at use time. If the available LinkedIn app has no job-search tool, the skill uses a signed-in LinkedIn browser session. If signed out, it asks the applicant to sign in through LinkedIn's official flow and continues employer-site research while waiting. Email checking uses the plugin selected for that workspace; it only reads matching messages and never sends or changes them.
 
 Every applicant has different qualifications, preferences, accounts and live opportunities. The plugin provides the same workflow and safeguards; job matches and application outcomes depend on those inputs and external sites.
 
