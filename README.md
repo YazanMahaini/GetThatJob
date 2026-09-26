@@ -75,10 +75,6 @@ Start a new Codex task after installation so the skills are available. Open the 
 
 The setup helper uses Python 3 when available. The skills also describe a file-tool fallback for systems without Python.
 
-### Use an existing workspace
-
-Point GetThatJob to the existing job-search folder. It previews additions with `setup_workspace.py --workspace <path> --dry-run`, then creates only missing scaffold files and a per-workspace setup marker. Existing files are opened in create-only mode and never replaced, truncated, or removed; an existing but malformed tracker or Markdown file is reported for review rather than reset. Subsequent runs see the marker and make no setup changes. Normal job-search work can still update the applicant's tracker and notes as new verified information arrives.
-
 ## Start with one prompt
 
 In your applicant workspace, select the `@GetThatJob` plugin mention and send:
@@ -95,7 +91,15 @@ That request starts or resumes the pipeline. GetThatJob handles these tasks in s
 4. **Build your reusable profile.** After each filled and checked draft, ProfileBuilder saves newly verified reusable answers in your private `APPLICATION_PROFILE.md`. Later applications check that file before asking you the same question again.
 5. **Follow your saved submission choice.** By default, Codex gives you the checked draft and stops so you can click Apply yourself or tell it to submit that application. If you chose automatic submission, it rechecks and submits a complete application without asking again, unless a required fact, signature, or other blocker needs you.
 
-### When Codex needs you
+### Use an existing workspace
+
+Point GetThatJob to the existing job-search folder. It previews additions with `setup_workspace.py --workspace <path> --dry-run`, then creates only missing scaffold files and a per-workspace setup marker. Existing files are opened in create-only mode and never replaced, truncated, or removed; an existing but malformed tracker or Markdown file is reported for review rather than reset. Subsequent runs see the marker and make no setup changes. Normal job-search work can still update the applicant's tracker and notes as new verified information arrives.
+
+## Add your own sources
+
+Place at least one current, approved CV in `CVs/`. Add official credentials to `Qualifications&Certificates/` as relevant, and optionally put an approved letter example in `CoverLetters/Template/`. ProfileIntake records the applicant's facts, preferred roles, eligibility and source documents in that workspace. After each checked application draft, ProfileBuilder merges newly verified reusable form answers into the private `APPLICATION_PROFILE.md`, preserving earlier entries and their source and reuse scope. It can also capture verified answers from an application filled outside JobFinder when that application is reviewed. Later forms check the accumulated profile before asking the applicant again. A CV from this applicant controls tailored CV styling; this repository contains no CV or cover-letter style template.
+
+## When Codex needs you
 
 You can start with one request and let GetThatJob do the work. It will pause and tell you exactly what it needs when only you can provide it. That might be a CV, proof of a qualification, your preferred kinds of jobs, an answer missing from your documents, a website sign-in, or your review of a completed application. Reply in the same conversation; it will pick up where it stopped and keep doing any other available work meanwhile.
 
@@ -118,10 +122,6 @@ Submitted. Check email and confirm.
 ```
 
 GetThatJob routes these to EmailConfirmationChecker. It identifies the application from your recent tracker and packet when there is one clear match; if several are plausible, it asks which employer and role you mean. It uses your selected email plugin to look for a matching receipt and records only what the evidence confirms. You can ask for a later status check when you want one.
-
-## Add your own sources
-
-Place at least one current, approved CV in `CVs/`. Add official credentials to `Qualifications&Certificates/` as relevant, and optionally put an approved letter example in `CoverLetters/Template/`. ProfileIntake records the applicant's facts, preferred roles, eligibility and source documents in that workspace. After each checked application draft, ProfileBuilder merges newly verified reusable form answers into the private `APPLICATION_PROFILE.md`, preserving earlier entries and their source and reuse scope. It can also capture verified answers from an application filled outside JobFinder when that application is reviewed. Later forms check the accumulated profile before asking the applicant again. A CV from this applicant controls tailored CV styling; this repository contains no CV or cover-letter style template.
 
 ## Tips
 
