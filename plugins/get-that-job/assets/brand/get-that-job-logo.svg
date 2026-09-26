@@ -1,15 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">GetThatJob logo</title>
-  <desc id="desc">A blue GTJ flowchart mark on a dark rounded square.</desc>
+  <desc id="desc">A blue input node flows through GTJ to a checked result on a dark rounded square.</desc>
   <rect width="512" height="512" rx="100" fill="#111111"/>
-  <rect x="68" y="158" width="376" height="196" rx="34" fill="#00182f" stroke="#244766" stroke-width="3"/>
-  <path d="M133 158v-37h86" fill="none" stroke="#5c9fde" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="86" y="76" width="95" height="50" rx="18" fill="#00182f" stroke="#5c9fde" stroke-width="3"/>
-  <path d="m205 121 14 0-8-8m8 8-8 8" fill="none" stroke="#5c9fde" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="256" y="288" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="112" font-weight="800" letter-spacing="-5" fill="#5c9fde">GTJ</text>
-  <path d="M363 354v38h-70" fill="none" stroke="#5c9fde" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="331" y="388" width="95" height="50" rx="18" fill="#00182f" stroke="#5c9fde" stroke-width="3"/>
-  <path d="m294 392-14 0 8-8m-8 8 8 8" fill="none" stroke="#5c9fde" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="133" cy="101" r="7" fill="#5c9fde"/>
+  <rect x="68" y="158" width="376" height="196" rx="34" fill="#00182f" stroke="#37698c" stroke-width="4"/>
+  <rect x="86" y="76" width="95" height="50" rx="18" fill="#00182f" stroke="#5c9fde" stroke-width="4"/>
+  <circle cx="133" cy="101" r="8" fill="#5c9fde"/>
+  <path d="M133 128v22m-8-6 8 10 8-10" fill="none" stroke="#5c9fde" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="288" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="112" font-weight="800" letter-spacing="-4" fill="#5c9fde">GTJ</text>
+  <path d="M363 356v22m-8-6 8 10 8-10" fill="none" stroke="#5c9fde" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="331" y="388" width="95" height="50" rx="18" fill="#00182f" stroke="#5c9fde" stroke-width="4"/>
   <path d="m364 413 13 13 21-25" fill="none" stroke="#5c9fde" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
