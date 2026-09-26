@@ -54,9 +54,15 @@ flowchart LR
 
 ## Install in ChatGPT Work or Codex
 
+**Required for a new setup:** Create a new, clean, empty folder for your job-search project. Make that folder the project's working directory, then open the project and start your GetThatJob chat **inside that project**. GetThatJob will create its folders and records there. Do not start the setup from the plugin repository, a general chat, or another project's directory. If you are returning to an existing GetThatJob workspace, reopen that project instead; see [Resume an existing workspace](#resume-an-existing-workspace).
+
 ### ChatGPT Work (recommended)
 
-This is the recommended setup used to test GetThatJob. Open the ChatGPT Work project where you want to use it and send this prompt. In a workspace with plugin installation enabled, ChatGPT Work handles the installation and guides you through any access step your account requires.
+This is the recommended setup used to test GetThatJob:
+
+1. Create a new, empty folder for the job-search project.
+2. Create a new ChatGPT Work project using that folder as its project directory. Open the new project and confirm you are chatting **inside it**.
+3. In that project's chat, send this prompt. ChatGPT Work handles the installation and guides you through any access step your account requires.
 
 ```text
 Install the following plugin: [https://github.com/YazanMahaini/GetThatJob](https://github.com/YazanMahaini/GetThatJob)
@@ -64,14 +70,14 @@ Install the following plugin: [https://github.com/YazanMahaini/GetThatJob](https
 
 ### Codex
 
-Install the plugin from this repository:
+Create a new, empty folder for the job-search project and open that folder as the active Codex project directory. Confirm the new project is selected before installing the plugin from this repository:
 
 ```text
 codex plugin marketplace add https://github.com/YazanMahaini/GetThatJob
 codex plugin add get-that-job@get-that-job
 ```
 
-Start a new Codex task after installation so the skills are available. Open the task in your job-search workspace, or give its full folder path in your prompt. Type `@GetThatJob` and select the installed plugin from Codex's suggestions. Codex may display the selected mention as `[@GetThatJob](plugin://get-that-job@get-that-job)`.
+Start a new Codex task **inside that same project** after installation so the skills are available and GetThatJob creates its workspace files in the empty folder you chose. Type `@GetThatJob` and select the installed plugin from Codex's suggestions. Codex may display the selected mention as `[@GetThatJob](plugin://get-that-job@get-that-job)`.
 
 The setup helper uses Python 3 when available. The skills also describe a file-tool fallback for systems without Python.
 
@@ -91,9 +97,9 @@ That request starts or resumes the pipeline. GetThatJob handles these tasks in s
 4. **Build your reusable profile.** After each filled and checked draft, ProfileBuilder saves newly verified reusable answers in your private `APPLICATION_PROFILE.md`. Later applications check that file before asking you the same question again.
 5. **Follow your saved submission choice.** By default, Codex gives you the checked draft and stops so you can click Apply yourself or tell it to submit that application. If you chose automatic submission, it rechecks and submits a complete application without asking again, unless a required fact, signature, or other blocker needs you.
 
-### Use an existing workspace
+### Resume an existing workspace
 
-Point GetThatJob to the existing job-search folder. It previews additions with `setup_workspace.py --workspace <path> --dry-run`, then creates only missing scaffold files and a per-workspace setup marker. Existing files are opened in create-only mode and never replaced, truncated, or removed; an existing but malformed tracker or Markdown file is reported for review rather than reset. Subsequent runs see the marker and make no setup changes. Normal job-search work can still update the applicant's tracker and notes as new verified information arrives.
+The empty-folder requirement is for a **new** setup. To continue a job search already managed by GetThatJob, reopen its existing project and start the task inside that project. GetThatJob uses the existing job-search folder. It previews any needed additions with `setup_workspace.py --workspace <path> --dry-run`, then creates only missing scaffold files and a per-workspace setup marker. Existing files are opened in create-only mode and never replaced, truncated, or removed; an existing but malformed tracker or Markdown file is reported for review rather than reset. Subsequent runs see the marker and make no setup changes. Normal job-search work can still update the applicant's tracker and notes as new verified information arrives.
 
 ## Add your own sources
 
