@@ -100,11 +100,23 @@ That request starts or resumes the pipeline. GetThatJob handles these tasks in s
 
 ### Resume an existing workspace
 
-The empty-folder requirement is for a **new** setup. To continue a job search already managed by GetThatJob, reopen its existing project and start the task inside that project. GetThatJob uses the existing job-search folder. It previews any needed additions with `setup_workspace.py --workspace <path> --dry-run`, then creates only missing scaffold files and a per-workspace setup marker. Existing files are opened in create-only mode and never replaced, truncated, or removed; an existing but malformed tracker or Markdown file is reported for review rather than reset. Subsequent runs see the marker and make no setup changes. Normal job-search work can still update the applicant's tracker and notes as new verified information arrives.
+The empty-folder requirement is for a **new** setup. To continue a job search already managed by GetThatJob, reopen its existing project and start the task inside that project. GetThatJob uses the existing job-search folder. Before adding any missing setup files, it previews the proposed changes with:
+
+```text
+setup_workspace.py --workspace <path> --dry-run
+```
+
+It then creates only missing scaffold files and a per-workspace setup marker. Existing files are opened in create-only mode and never replaced, truncated, or removed; an existing but malformed tracker or Markdown file is reported for review rather than reset. Subsequent runs see the marker and make no setup changes. Normal job-search work can still update the applicant's tracker and notes as new verified information arrives.
 
 ## Add your own sources
 
-On first setup, GetThatJob creates the folders and **waits** while you add your files. Put at least one current, approved CV in `CVs/` and relevant official credentials in `Qualifications&Certificates/`. A generic cover-letter design is already in `CoverLetters/Template/`. If you prefer the look of your own letter, add an approved reference there and tell GetThatJob to use it. Then reply in the same chat: `I've added my documents. Continue.` You can also explicitly ask it to continue without adding files; it will report what is missing. This handoff is remembered if you leave and return later.
+On first setup, GetThatJob creates the folders and **waits** while you add your files. Put at least one current, approved CV in `CVs/` and relevant official credentials in `Qualifications&Certificates/`. A generic cover-letter design is already in `CoverLetters/Template/`. If you prefer the look of your own letter, add an approved reference there and tell GetThatJob to use it. Then reply in the same chat:
+
+```text
+I've added my documents. Continue.
+```
+
+You can also explicitly ask it to continue without adding files; it will report what is missing. This handoff is remembered if you leave and return later.
 
 ProfileIntake records the applicant's facts, preferred roles, eligibility and source documents in that workspace. After each checked application draft, ProfileBuilder merges newly verified reusable form answers into the private `APPLICATION_PROFILE.md`, preserving earlier entries and their source and reuse scope. It can also capture verified answers from an application filled outside JobFinder when that application is reviewed. Later forms check the accumulated profile before asking the applicant again. A CV from this applicant controls tailored CV styling; the bundled letter design contains only placeholders.
 
@@ -118,7 +130,13 @@ It also asks whether to **stop after filling and checking each application** or 
 
 If you add several CVs with different designs, GetThatJob asks you to pick one of **your CVs** as the design to follow. This controls how tailored CVs look. It still reads all your approved CVs for information, so choosing a design does not discard experience or skills recorded in another version. If you have one CV, or your CVs share the same design, no choice is needed.
 
-After reviewing a checked draft in the default mode, tell Codex any revisions you want. If you want it to submit that application, say: `Use @GetThatJob to submit my reviewed application for [employer and role].` It rechecks the application before submission. An e-signature or signing declaration requires a separate, explicit instruction for that specific application.
+After reviewing a checked draft in the default mode, tell Codex any revisions you want. If you want it to submit that application, say:
+
+```text
+Use @GetThatJob to submit my reviewed application for [employer and role].
+```
+
+It rechecks the application before submission. An e-signature or signing declaration requires a separate, explicit instruction for that specific application.
 
 If you click Apply yourself, continue in the same GetThatJob task with either prompt:
 
