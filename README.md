@@ -15,7 +15,7 @@ flowchart LR
     subgraph setup["01  SET UP"]
         direction TB
         A("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Ask GetThatJob for help</div>") --> B("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>First use here?</div>")
-        B --> C("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Yes: SetupSkill adds only missing files</div>")
+        B --> C("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Yes: SetupSkill adds missing files and saves choices</div>")
         B --> D("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>SetupChecker checks sources</div>")
         C --> D
     end
@@ -27,15 +27,15 @@ flowchart LR
         E --> H("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>JobFinder checks roles and eligibility</div>")
         G --> H
     end
-    subgraph prepare["03  PREPARE & REVIEW"]
+    subgraph prepare["03  PREPARE & CHECK"]
         direction TB
         I("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Tailor CV, letter and packet</div>") --> J("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Fill and check portal draft</div>")
         J --> P("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>ProfileBuilder saves verified answers</div>")
-        P --> K("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>You review and request changes</div>")
+        P --> K("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Follow your saved submission choice</div>")
     end
     subgraph outcome["04  SUBMIT & TRACK"]
         direction TB
-        L("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>You submit, or direct ApplicationFinalize</div>") --> M("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>EmailConfirmationChecker checks receipt</div>")
+        L("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>You click Apply or Codex submits when authorized</div>") --> M("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>EmailConfirmationChecker checks receipt</div>")
         M --> N("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>Tracker and packet record outcome</div>")
         N --> O("<div style='width:210px;height:66px;display:flex;align-items:center;justify-content:center;text-align:center'>ApplicationFollowUp checks later status</div>")
     end
@@ -81,11 +81,11 @@ Use @GetThatJob and find me jobs.
 
 That request starts or resumes the pipeline. GetThatJob handles these tasks in sequence:
 
-1. **Set up and check the workspace.** On first use in that workspace, it creates only missing folders and blank records. It preserves existing files, checks available CVs and credentials, asks once for the email plugin's Codex `@` mention, and identifies any missing search priorities.
+1. **Set up and check the workspace.** On first use in that workspace, it creates only missing folders and blank records. It preserves existing files, checks available CVs and credentials, asks once for your email plugin and submission preference, and identifies any missing search priorities.
 2. **Find and assess jobs.** It searches LinkedIn Jobs and employer sites, checks live requirements, eligibility, and duplicates, and records why a role fits or fails. If LinkedIn needs sign-in, it asks you to use LinkedIn's official flow while it continues employer-site research.
 3. **Prepare strong applications.** For a strong eligible role, it follows your approved CV's style, creates a tailored CV, cover letter, and application packet, and fills and checks a portal draft when accessible.
 4. **Build your reusable profile.** After each filled and checked draft, ProfileBuilder saves newly verified reusable answers in your private `APPLICATION_PROFILE.md`. Later applications check that file before asking you the same question again.
-5. **Hand the application to you for review.** Codex gives you the packet, draft location, deadline, unanswered questions, and next action. It stops before final submission.
+5. **Follow your saved submission choice.** By default, Codex gives you the checked draft and stops so you can click Apply yourself or tell it to submit that application. If you chose automatic submission, it rechecks and submits a complete application without asking again, unless a required fact, signature, or other blocker needs you.
 
 ### When Codex needs you
 
@@ -93,9 +93,18 @@ Codex may ask you to add an approved CV or relevant credential, confirm a search
 
 At first setup, GetThatJob asks: **“Which email plugin should I use to check application confirmations? Please select it with `@`, such as `@Outlook Email` or `@Gmail`.”** It saves that plugin selection in your private `OPERATIONS.md` and reuses it when you resume; it does not ask again. If the selected plugin is not installed or connected, job search and draft preparation can continue, but Codex will report that it cannot verify an email receipt until access is available. It does not switch to another mailbox without your direction.
 
-After reviewing, tell Codex any revisions you want. If you want it to submit a specific application, say: `Use @GetThatJob to submit my reviewed application for [employer and role].` It rechecks that application before submission. An e-signature or signing declaration requires a separate, explicit instruction for that specific application.
+It also asks whether to **stop after filling and checking each application** or **submit complete applications automatically without asking each time**. The default is to stop and let you click Apply. In that mode, you can instead tell Codex to submit a specific checked application. Your choice is saved privately and applies to future applications until you explicitly change it. Automatic submission never includes signing an application, paying a fee, or guessing a required answer; those still stop for your input.
 
-When it submits a reviewed application, GetThatJob checks for a matching confirmation email when mailbox access is available and records the evidence. If you submitted the application yourself, say `I submitted my application for [employer and role]; check its confirmation email.` You can ask for a later status check when you want one.
+After reviewing a checked draft in the default mode, tell Codex any revisions you want. If you want it to submit that application, say: `Use @GetThatJob to submit my reviewed application for [employer and role].` It rechecks the application before submission. An e-signature or signing declaration requires a separate, explicit instruction for that specific application.
+
+If you click Apply yourself, continue in the same GetThatJob task with either prompt:
+
+```text
+I applied, check email.
+Submitted. Check email and confirm.
+```
+
+GetThatJob routes these to EmailConfirmationChecker. It identifies the application from your recent tracker and packet when there is one clear match; if several are plausible, it asks which employer and role you mean. It uses your selected email plugin to look for a matching receipt and records only what the evidence confirms. You can ask for a later status check when you want one.
 
 ## Add your own sources
 
@@ -103,7 +112,7 @@ Place at least one current, approved CV in `CVs/`. Add official credentials to `
 
 ## Application flow
 
-JobFinder searches LinkedIn Jobs and employer sites, verifies the live posting, checks duplicates and essential requirements, creates a tailored CV and cover letter, and fills a checked draft when accessible. ProfileBuilder then captures newly verified reusable answers. JobFinder stops for applicant review before final submission. ApplicationFinalize handles a separately authorized submission; application signing always requires explicit authorization for that specific application. EmailConfirmationChecker verifies a matching receipt, and ApplicationFollowUp records later stages when asked.
+JobFinder searches LinkedIn Jobs and employer sites, verifies the live posting, checks duplicates and essential requirements, creates a tailored CV and cover letter, and fills a checked draft when accessible. ProfileBuilder then captures newly verified reusable answers. The saved submission mode determines whether JobFinder stops for the applicant or passes a complete checked draft to ApplicationFinalize for automatic submission. Application signing always requires explicit authorization for that specific application. EmailConfirmationChecker verifies a matching receipt, and ApplicationFollowUp records later stages when asked.
 
 LinkedIn access is checked at use time. If the available LinkedIn app has no job-search tool, the skill uses a signed-in LinkedIn browser session. If signed out, it asks the applicant to sign in through LinkedIn's official flow and continues employer-site research while waiting. Email checking uses the plugin selected for that workspace; it only reads matching messages and never sends or changes them.
 

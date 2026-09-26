@@ -28,7 +28,7 @@ Summarize only verified facts. Keep study, award, employment, internship, volunt
 - Role priorities and locations: see `TARGET_ROLES.md`.
 - Compensation, remote-work, and travel preferences: [Ask]
 - Availability: [Ask]
-- Draft-filling and submission preference: [Ask; default is review before submission]
+- Submission preference: See the standing mode in `OPERATIONS.md`; do not keep a conflicting copy here.
 - References and permission to contact: [Ask for each application if needed]
 
 ## Open questions and conflicts

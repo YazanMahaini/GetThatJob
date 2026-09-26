@@ -14,7 +14,7 @@ Follow the style of the user's selected source CV. There is no plugin CV or cove
 
 ## Application boundary
 
-Search and draft preparation may proceed from a search request. Never submit or sign an application without the user's applicable authorization. Permission to submit does not include permission to fill an e-signature or certification-signature field. Verify the exact live destination, answers, files, fees, and duplicate status before any authorized submission. Record confirmation evidence rather than assuming a click succeeded.
+Search and draft preparation may proceed from a search request. Read the submission mode in `OPERATIONS.md`: `stop-and-wait` is the default and requires the applicant to click Apply or direct Codex to submit that specific application; `automatic-submit` is standing authorization for ApplicationFinalize after a checked draft. The applicant may explicitly change the mode later. Neither mode authorizes an e-signature or certification-signature field. Verify the exact live destination, answers, files, fees, and duplicate status before any authorized submission. Record confirmation evidence rather than assuming a click succeeded.
 
 Keep application-specific facts in `APPLICATIONS.csv` and the matching packet. Use `MEMORY.md` for durable narrative context and `APPLICATION_PROFILE.md` for verified, reusable form answers. Check the latter before asking the applicant to repeat a known answer; respect its source, scope, and recheck rule.
 

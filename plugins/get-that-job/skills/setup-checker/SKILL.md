@@ -14,3 +14,5 @@ The minimum source document for tailoring is one readable, user-approved CV. A p
 If a user has just added files, continue with [ProfileIntake](../profile-intake/SKILL.md) to interpret and index them. Do not rerun one-time setup when the marker exists.
 
 Read the confirmation email plugin choice from `OPERATIONS.md` when reporting setup status. On a resumed workspace, do not ask for its `@` mention again. If a choice is absent, report that email receipt checking is not configured; continue other work and accept a plugin only when the applicant explicitly supplies or changes one. Existing workspace instructions that already name an email provider count as a recorded choice even if they predate the template's structured field.
+
+Read the submission mode from `OPERATIONS.md` too. Treat a missing mode in an older workspace as `stop-and-wait`, unless its existing instructions explicitly record another choice. Do not ask the first-setup submission question on resumption; report the effective mode and change it only when the applicant explicitly requests a change.

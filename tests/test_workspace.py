@@ -28,7 +28,9 @@ class WorkspaceTests(unittest.TestCase):
             tracker.write_bytes(b"Applicant-owned tracker\r\n")
             operations = workspace / "OPERATIONS.md"
             operations.write_text(
-                "Applicant-owned workflow\nEmail confirmation uses Outlook.\n", encoding="utf-8"
+                "Applicant-owned workflow\nEmail confirmation uses Outlook.\n"
+                "Submission mode: automatic-submit\n",
+                encoding="utf-8",
             )
             (workspace / "CVs").mkdir()
             cv = workspace / "CVs" / "Approved CV.docx"
@@ -50,7 +52,8 @@ class WorkspaceTests(unittest.TestCase):
             self.assertEqual(instructions.read_text(encoding="utf-8"), "Applicant-owned instructions\n")
             self.assertEqual(
                 operations.read_text(encoding="utf-8"),
-                "Applicant-owned workflow\nEmail confirmation uses Outlook.\n",
+                "Applicant-owned workflow\nEmail confirmation uses Outlook.\n"
+                "Submission mode: automatic-submit\n",
             )
             self.assertTrue((workspace / ".getthatjob" / "setup.json").is_file())
             self.assertTrue((workspace / "APPLICATION_PROFILE.md").is_file())
@@ -99,7 +102,7 @@ class WorkspaceTests(unittest.TestCase):
             self.assertEqual(damaged["status"], "repair-needed")
             self.assertTrue(any("Broken.docx" in item for item in damaged["repair"]))
 
-    def test_email_plugin_choice_survives_repeat_setup_and_repair(self) -> None:
+    def test_workspace_choices_survive_repeat_setup_and_repair(self) -> None:
         with tempfile.TemporaryDirectory(prefix="getthatjob-test-") as directory:
             workspace = Path(directory)
             setup(workspace)
@@ -107,11 +110,15 @@ class WorkspaceTests(unittest.TestCase):
             template = operations.read_text(encoding="utf-8")
             self.assertIn("## Confirmation email plugin", template)
             self.assertIn("Selected Codex email plugin:", template)
+            self.assertIn("## Submission preference", template)
+            self.assertIn("Submission mode: `stop-and-wait`", template)
 
             chosen = (
                 "# Applicant operations\n\n"
                 "## Confirmation email plugin\n\n"
                 "- Selected Codex email plugin: gmail@openai-curated-remote\n"
+                "\n## Submission preference\n\n"
+                "- Submission mode: `automatic-submit`\n"
             )
             operations.write_text(chosen, encoding="utf-8")
             self.assertEqual(setup(workspace)["status"], "already-initialized")
