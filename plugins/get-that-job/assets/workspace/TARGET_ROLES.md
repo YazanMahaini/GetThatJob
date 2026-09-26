@@ -1,6 +1,6 @@
 # Job search targets
 
-Record the user's confirmed priorities before searching. Do not copy another applicant's industries, countries, eligibility assumptions, or CV style.
+Record the user's confirmed priorities before searching. These are search filters, not permission to submit applications to every matching role. Opportunity selection and any explicit standing automatic application scope are recorded separately in `OPERATIONS.md`. Do not copy another applicant's industries, countries, eligibility assumptions, or CV style.
 
 | Priority | Roles and close variants | Locations or remote scope | Required compensation | Evidence for fit |
 | --- | --- | --- | --- | --- |
