@@ -1,10 +1,3 @@
-# GetThatJob workflow
-
-This interactive diagram groups the pipeline from workspace setup through a recorded application outcome. Read the numbered panels from left to right. Use GitHub's diagram controls to zoom and pan.
-
-## Detailed decisions and branches
-
-```mermaid
 flowchart LR
     subgraph setup["01  SET UP"]
         direction TB
@@ -43,27 +36,3 @@ flowchart LR
     style prepare fill:transparent,stroke:#355675,color:#5c9fde
     style outcome fill:transparent,stroke:#355675,color:#5c9fde
     linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13 stroke:#6f95b5,stroke-width:2px;
-```
-
-If LinkedIn is signed out, the applicant signs in through LinkedIn's official flow while other research can continue. After missing sources are added, SetupChecker runs again. Revisions return to the application packet. ProfileBuilder also accepts verified answers from a checked application filled outside JobFinder. Each later application reads the growing private profile and rechecks role-specific facts. Follow-up updates the same tracker and packet.
-
-## Full-resolution PNGs
-
-- [Horizontal detailed workflow (3136 × 1284 pixels)](docs/workflow-detailed-horizontal.png)
-- [Vertical detailed workflow (3136 × 5384 pixels)](docs/workflow-detailed-vertical.png)
-
-<details>
-<summary>Preview the horizontal PNG</summary>
-
-[![Horizontal detailed GetThatJob workflow](docs/workflow-detailed-horizontal.png)](docs/workflow-detailed-horizontal.png)
-
-</details>
-
-<details>
-<summary>Preview the vertical PNG</summary>
-
-[![Vertical detailed GetThatJob workflow](docs/workflow-detailed-vertical.png)](docs/workflow-detailed-vertical.png)
-
-</details>
-
-The workspace contains `CVs/`, `CoverLetters/`, `Qualifications&Certificates/`, `applications/`, `APPLICATION_PROFILE.md`, and the other Markdown and CSV source indexes. Setup runs once per applicant workspace. A search request may authorize filling a reversible draft; final submission and application signing have separate authorization boundaries. Later follow-up is recorded in the same application packet.

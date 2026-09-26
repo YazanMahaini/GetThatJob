@@ -8,25 +8,28 @@ GetThatJob is a Codex plugin for setting up a private job-search workspace, chec
 
 ## How GetThatJob works
 
+Read the top row from left to right, then the bottom row from right to left.
+
 ```mermaid
+%%{init: {"flowchart": {"rankSpacing": 10, "nodeSpacing": 20}}}%%
 flowchart TB
     subgraph first[" "]
         direction LR
-        A["01 SET UP<br/>Ask GetThatJob for help.<br/>SetupSkill creates the workspace.<br/>SetupChecker finds gaps."] --> B["02 ADD SOURCES<br/>Add CVs, credentials and priorities.<br/>ProfileIntake verifies facts<br/>and follows your CV style."] --> C["03 FIND JOBS<br/>JobFinder searches LinkedIn Jobs<br/>and employer sites.<br/>It checks fit and eligibility."] --> D["04 PREPARE<br/>Tailor CV and cover letter.<br/>Fill and check a portal draft.<br/>ProfileBuilder saves verified answers."]
+        A("01 SET UP<br/>Create files<br/>Check sources<br/>Keep existing") --> B("02 SOURCES<br/>Add CVs<br/>Add records<br/>Verify facts") --> C("03 FIND JOBS<br/>Find roles<br/>Check fit<br/>Check criteria") --> D("04 PREPARE<br/>Tailor CV<br/>Fill draft<br/>Save answers")
     end
     subgraph second[" "]
         direction RL
-        E["05 REVIEW<br/>You review and request changes.<br/>ApplicationFinalize submits<br/>only with your direction."] --> F["06 CONFIRM<br/>EmailConfirmationChecker looks<br/>for a matching receipt<br/>and checks portal evidence."] --> G["07 TRACK<br/>Tracker and packet record outcome.<br/>ApplicationFollowUp checks<br/>later status when requested."] --> H["08 REUSE<br/>The next application reads the<br/>private, growing profile.<br/>Scoped facts are rechecked."]
+        E("05 REVIEW<br/>Review draft<br/>Request edits<br/>Choose action") --> F("06 CONFIRM<br/>Check email<br/>Check portal<br/>Verify receipt") --> G("07 TRACK<br/>Track outcome<br/>Save evidence<br/>Follow up") --> H("08 REUSE<br/>Use profile<br/>Recheck facts<br/>Find next role")
     end
-    first --> second
-    classDef step fill:#00182f,stroke:#355675,color:#d9e8f6,stroke-width:2px;
+    first ~~~ second
+    classDef step fill:#00182f,stroke:#355675,color:#5c9fde,stroke-width:2px,font-size:16px;
     class A,B,C,D,E,F,G,H step;
     style first fill:transparent,stroke:transparent
     style second fill:transparent,stroke:transparent
-    linkStyle default stroke:#6f95b5,stroke-width:2px;
+    linkStyle 0,1,2,3,4,5 stroke:#6f95b5,stroke-width:2px;
 ```
 
-The [detailed interactive workflow](WORKFLOW.md) shows every decision and branch. It also offers full-resolution [horizontal](docs/workflow-detailed-horizontal.png) and [vertical](docs/workflow-detailed-vertical.png) PNGs.
+The [detailed interactive workflow](WORKFLOW.md) shows the main decisions and stages, with notes on alternate routes and repeat steps. It also offers full-resolution [horizontal](docs/workflow-detailed-horizontal.png) and [vertical](docs/workflow-detailed-vertical.png) PNGs.
 
 ## Install in Codex
 

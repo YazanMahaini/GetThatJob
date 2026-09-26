@@ -4,6 +4,6 @@
     "render:workflow": "node docs/render_detailed_workflow.mjs"
   },
   "devDependencies": {
-    "@viz-js/viz": "3.30.0"
+    "@mermaid-js/mermaid-cli": "11.17.0"
   }
 }
