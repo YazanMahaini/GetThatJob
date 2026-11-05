@@ -52,7 +52,7 @@ flowchart LR
     linkStyle 14,15,16 stroke:transparent,fill:transparent;
 ```
 
-## Install in ChatGPT Work or Codex
+## Install in ChatGPT Work, Codex or Claude Code
 
 **Required for a new setup:** Create a new, clean, empty folder for your job-search project. Make that folder the project's working directory, then open the project and start your GetThatJob chat **inside that project**. GetThatJob will create its folders and records there. Do not start the setup from the plugin repository, a general chat, or another project's directory. If you are returning to an existing GetThatJob workspace, reopen that project instead; see [Resume an existing workspace](#resume-an-existing-workspace).
 
@@ -79,6 +79,17 @@ codex plugin add get-that-job@get-that-job
 ```
 
 Start a new Codex task **inside that same project** after installation so the skills are available and GetThatJob creates its workspace files in the empty folder you chose. Type `@GetThatJob` and select the installed plugin from Codex's suggestions. Codex may display the selected mention as `[@GetThatJob](plugin://get-that-job@get-that-job)`.
+
+### Claude Code
+
+Create a new, empty folder for the job-search project and start a Claude Code session in that folder. Install the plugin from this repository:
+
+```text
+/plugin marketplace add YazanMahaini/GetThatJob
+/plugin install get-that-job@get-that-job
+```
+
+Start a new Claude Code session **inside that same folder** after installation so the skills are available and GetThatJob creates its workspace files there. Ask Claude to set up GetThatJob; the skills appear as `get-that-job:get-that-job`, `get-that-job:job-finder` and so on.
 
 The setup helper uses Python 3 when available. The skills also describe a file-tool fallback for systems without Python.
 
@@ -177,4 +188,4 @@ Only generic templates, including the optional default cover-letter design, skil
 
 ## Development checks
 
-Validate `plugins/get-that-job/` with Codex's plugin validator and each `skills/*/SKILL.md` with the skill validator. Test setup and checking in a synthetic temporary workspace. Review the source for private information and run `git status` before pushing. No real application needs to be submitted to test this repository.
+Validate `plugins/get-that-job/` with Codex's plugin validator and each `skills/*/SKILL.md` with the skill validator. For Claude Code, also run `claude plugin validate .` and `claude plugin validate plugins/get-that-job`. Test setup and checking in a synthetic temporary workspace. Review the source for private information and run `git status` before pushing. No real application needs to be submitted to test this repository.

@@ -1,0 +1,18 @@
+{
+  "name": "get-that-job",
+  "owner": {
+    "name": "GetThatJob"
+  },
+  "metadata": {
+    "description": "GetThatJob plugin marketplace for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "get-that-job",
+      "source": "./plugins/get-that-job",
+      "description": "Set up and run an evidence-led job search and application workspace using each user's own documents.",
+      "version": "0.2.5",
+      "category": "productivity"
+    }
+  ]
+}
